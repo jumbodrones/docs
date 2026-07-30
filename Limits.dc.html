@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+.eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.16em;text-transform:uppercase}
+.wm-sub{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.2em;text-transform:uppercase}
+a{color:#3E8EDE}a:hover{color:#98D5C7}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- TITLE -->
+  <section data-label="Title" data-speaker-notes="Frame the deck: the FAA sets a hard ceiling for Part 107 operations, but staying under it is only the starting point for safe, responsible flights." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div style="display:flex;align-items:center;gap:16px"><img src="./assets/limits/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/limits/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 0.9fr;gap:60px;align-items:center">
+      <div>
+        <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">FAA Part 107 · Know Before You Fly</div>
+        <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:118px;line-height:0.98;letter-spacing:-0.02em;margin:0 0 30px">Major Operating Limits</h1>
+        <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.4;max-width:1200px;color:rgba(255,255,255,0.9);margin:0">The FAA sets the legal threshold for small remotely piloted aircraft. But should we always fly right up to it?</p>
+      </div>
+      <image-slot id="title-drone" shape="rect" src="./assets/limits/img03.png" fit="contain" placeholder="Drop a drone-in-flight photo" style="width:100%;height:560px"></image-slot>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:22px;color:rgba(255,255,255,0.75)"><span>Tufts University Data Lab</span><span>Drone Program Briefing</span></div>
+  </section>
+
+  <!-- SPEED -->
+  <section data-label="Speed" data-speaker-notes="Part 107 caps ground speed at 87 knots (100 mph), but every consumer drone we fly tops out well below that limit — so speed is rarely the binding constraint in practice." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Operational Limits for Drones in the NAS</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;color:#002E6D;margin:0 0 14px;letter-spacing:-0.01em">Maximum ground speed</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.5;color:#3D2E25;margin:0 0 44px;max-width:1500px">The regulated ceiling is <strong>87 knots (100 mph)</strong>. In practice, the fleet we fly never gets close to it.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;flex:1">
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:36px;display:flex;flex-direction:column;gap:20px">
+        <image-slot id="speed-drone-1" shape="rounded" radius="12" src="./assets/limits/img04.png" fit="contain" placeholder="Drop a drone photo" style="width:100%;height:260px"></image-slot>
+        <div><div style="font-weight:700;font-size:24px;color:#002E6D">Compact quad</div><div style="font-family:'Source Serif 4',serif;font-size:22px;color:#63493A">Max speed 35 mph</div></div>
+      </div>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:36px;display:flex;flex-direction:column;gap:20px">
+        <image-slot id="speed-drone-2" shape="rounded" radius="12" src="./assets/limits/img05.png" fit="contain" placeholder="Drop a drone photo" style="width:100%;height:260px"></image-slot>
+        <div><div style="font-weight:700;font-size:24px;color:#002E6D">Standard quad</div><div style="font-family:'Source Serif 4',serif;font-size:22px;color:#63493A">Max speed 42 mph</div></div>
+      </div>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:36px;display:flex;flex-direction:column;gap:20px">
+        <image-slot id="speed-drone-3" shape="rounded" radius="12" src="./assets/limits/img06.png" fit="contain" placeholder="Drop a drone photo" style="width:100%;height:260px"></image-slot>
+        <div><div style="font-weight:700;font-size:24px;color:#002E6D">Mapping quad</div><div style="font-family:'Source Serif 4',serif;font-size:22px;color:#63493A">Max speed 45 mph</div></div>
+      </div>
+    </div>
+    <div style="margin-top:36px;font-family:'Source Serif 4',serif;font-size:22px;color:#63493A"><strong>Flight time:</strong> roughly 31 minutes under ideal conditions — wind, cold, and payload all shorten it.</div>
+  </section>
+
+  <!-- ALTITUDE -->
+  <section data-label="Altitude" data-speaker-notes="Standard ceiling is 400 feet AGL. Near a structure, that ceiling can rise, but only within a tight radius and only above the structure itself." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Operational Limits for Drones in the NAS</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;color:#002E6D;margin:0 0 14px;letter-spacing:-0.01em">Maximum altitude</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.5;color:#3D2E25;margin:0 0 40px;max-width:1500px">A drone cannot fly higher than <strong>400 feet above ground level (AGL)</strong> — unless it stays within a 400-foot radius of a structure and no more than 400 feet above that structure's uppermost point.</p>
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:52px;flex:1;align-items:stretch">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <img src="./assets/limits/img07.png" alt="Altitude limit diagram: 400 ft AGL standard ceiling, 400 ft radius exception around a structure up to 400 ft above its top" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 12px 28px rgba(61,46,37,0.12)">
+        <div style="font-family:'Montserrat',sans-serif;font-size:16px;color:#63493A">Image credit: Drone Pilot Ground School</div>
+      </div>
+      <div style="background:#fff;border-radius:20px;padding:48px;box-shadow:0 12px 28px rgba(61,46,37,0.12);display:flex;flex-direction:column;justify-content:center;gap:24px">
+        <div style="font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#B24E10">The structure exception</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.55;color:#3D2E25">Mapping a cell tower or crane taller than 400 ft? You may fly up to 400 ft above its highest point — but only inside a 400-ft radius around it. Stray outside that radius and the standard 400-ft AGL ceiling applies again.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIBILITY & CLOUDS -->
+  <section data-label="Visibility" data-speaker-notes="Two separate rules stack here: visibility from the control station, and clearance from any cloud. Both must hold for the whole flight, not just at launch." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:14px">Operational Limits for Drones in the National Airspace</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;color:#fff;margin:0 0 44px;letter-spacing:-0.01em">Visibility and cloud clearance</h2>
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:52px;flex:1">
+      <img src="./assets/limits/img08.png" alt="Diagram: drone must stay 500 feet below and 2,000 feet horizontally from clouds, with 3 statute miles of visibility" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 12px 28px rgba(0,0,0,0.25)">
+      <div style="display:flex;flex-direction:column;gap:32px;justify-content:center">
+        <div style="background:rgba(255,255,255,0.08);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:700;font-size:22px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE">Minimum visibility</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:72px;line-height:1">3 sm</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5;color:rgba(255,255,255,0.9)">As observed from the location of the control station.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:700;font-size:22px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE">Cloud clearance</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;line-height:1.15">500 ft below · 2,000 ft horizontal</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5;color:rgba(255,255,255,0.9)">Measured below and away from any cloud.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY/NIGHT -->
+  <section data-label="Day and Night" data-speaker-notes="Night flight has been legal since April 2021, but it comes with two conditions: recurrent training and anti-collision lighting visible for at least three statute miles." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Operational Limits for Drones in the NAS</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;color:#002E6D;margin:0 0 44px;letter-spacing:-0.01em">Daylight, twilight, and night operations</h2>
+    <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;flex:1">
+      <image-slot id="night-flight" shape="rounded" radius="20" src="./assets/limits/img09.png" placeholder="Drop a night-flight photo" style="width:100%;height:100%"></image-slot>
+      <div style="display:flex;flex-direction:column;gap:30px;justify-content:center">
+        <div style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.5;color:#3D2E25">Standard operations require daylight or civil twilight with anti-collision lighting. Since April 21, 2021, Part 107 and recreational pilots can also fly at night — if two conditions are met:</div>
+        <div style="display:flex;gap:22px;align-items:flex-start"><span style="flex-shrink:0;width:48px;height:48px;border-radius:50%;background:#3E8EDE;color:#fff;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center">1</span><div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4;color:#3D2E25">Complete online recurrent training on night operations.</div></div>
+        <div style="display:flex;gap:22px;align-items:flex-start"><span style="flex-shrink:0;width:48px;height:48px;border-radius:50%;background:#3E8EDE;color:#fff;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center">2</span><div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4;color:#3D2E25">Equip the drone with anti-collision lighting visible from at least 3 statute miles.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCUSSION -->
+  <section data-label="Discussion" data-speaker-notes="This is the point of the deck: the FAA ceiling is a legal boundary, not a recommendation. Open the floor to when the program should set its own, tighter limits." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/limits/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">The real question</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:88px;line-height:1.08;margin:0;max-width:1500px">Legal isn't the same as responsible.</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.5;max-width:1400px;margin:36px 0 0;color:rgba(255,255,255,0.9)">These are some of the limits the FAA regulates. Where should the Drone Program set its own, tighter limits — and why?</p>
+    <div style="width:180px;height:8px;background:#3E8EDE;margin-top:44px;border-radius:4px"></div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section data-label="References" data-speaker-notes="Close with sources so anyone can verify these limits directly against the FAA advisory circular and Part 107 legal commentary." style="position:relative;width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:30px">References &amp; Links</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:72px;margin:0 0 56px;letter-spacing:-0.01em">Sources</h2>
+    <div style="display:flex;flex-direction:column;gap:24px;font-family:'Source Serif 4',serif;font-size:28px">
+      <div style="display:flex;gap:18px;align-items:baseline"><span style="color:#3E8EDE">→</span><a href="https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_107-2.pdf" style="color:#fff;text-decoration:underline">FAA Advisory Circular 107-2 — Small Unmanned Aircraft Systems</a></div>
+      <div style="display:flex;gap:18px;align-items:baseline"><span style="color:#3E8EDE">→</span><a href="https://jrupprechtlaw.com/faa-part-107/" style="color:#fff;text-decoration:underline">Part 107 Overview — jrupprechtlaw.com</a></div>
+    </div>
+    <div style="margin-top:64px;font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;font-weight:600;letter-spacing:0.06em">TUFTS DRONE PROGRAM · TUFTS UNIVERSITY DATA LAB</div>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

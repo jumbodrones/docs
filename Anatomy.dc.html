@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+
+</helmet>
+<div style="position:relative;width:100%;height:100%">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- TITLE -->
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="Welcome everyone. Today we're covering what's inside the DJI Air 2S — the drone our program flies — and how it senses the world around it." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div style="display:flex;align-items:center;gap:16px"><img src="./assets/anatomy/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/anatomy/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+    <div>
+      <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">Tufts University Data Lab</div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:118px;line-height:0.98;letter-spacing:-0.02em;margin:0 0 30px">Drone Anatomy<br>&amp; Sensors</h1>
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.4;max-width:1100px;color:rgba(255,255,255,0.9);margin:0">What's inside the aircraft — core components, sensing systems, and the radio links that keep it flying.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:24px;color:rgba(255,255,255,0.75)"><span>Drone Sensing</span><span>Tufts Drone Program</span></div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <section data-label="Section" data-screen-label="02" data-speaker-notes="We'll start with the physical aircraft, then move to sensing systems, communication, the controller, and finally a look at a drone we built ourselves in the lab." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/anatomy/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">Part 01</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:104px;line-height:1.02;margin:0;max-width:1400px">What's Inside<br>the Aircraft</h2>
+    <div style="width:180px;height:8px;background:#3E8EDE;margin-top:44px;border-radius:4px"></div>
+  </section>
+
+  <!-- CONTENT: Core components (interactive) -->
+  <section data-label="Core Components" data-screen-label="03" data-speaker-notes="Click through the highlighted points on the drone — propeller, motor, gimbal and camera, and the battery. " style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Core Components · DJI Air 2S</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 28px;letter-spacing:-0.01em">Tap a part to learn what it does</h2>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:50px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:20px;overflow:hidden;background:#F2EDE7;aspect-ratio:1200/502">
+        <img src="./assets/anatomy/img03.png" alt="DJI Air 2S drone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <sc-for list="{{ anatomyHotspots }}" as="hs" hint-placeholder-count="5">
+          <button sc-camel-on-click="{{ hs.onClick }}" aria-label="{{ hs.label }}" style="{{ hs.markerStyle }}"><span class="hs-dot" style="{{ hs.dotStyle }}"></span></button>
+        </sc-for>
+      </div>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:40px;display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:0">
+        <div style="font-weight:700;font-size:30px;color:#002E6D">{{ anatomyActiveLabel }}</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5">{{ anatomyActiveDesc }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Vision & obstacle sensors (interactive) -->
+  <section data-label="Vision Sensors" data-screen-label="04" data-speaker-notes="Tap each hotspot to walk through forward, downward, upward, and backward vision, plus infrared and ultrasonic sensing. Emphasize these are what let the Air 2S avoid obstacles and hold position without GPS." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Sensing Systems · DJI Air 2S</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 28px;letter-spacing:-0.01em">Seeing in every direction</h2>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:50px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:20px;overflow:hidden;background:#fff;aspect-ratio:1133/665;box-shadow:0 12px 28px rgba(61,46,37,0.1)">
+        <img src="./assets/anatomy/img04.png" alt="DJI Air 2S forward and downward vision sensor detection cones, four angles" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <sc-for list="{{ sensorHotspots }}" as="hs" hint-placeholder-count="6">
+          <button sc-camel-on-click="{{ hs.onClick }}" aria-label="{{ hs.label }}" style="{{ hs.markerStyle }}"><span class="hs-dot" style="{{ hs.dotStyle }}"></span></button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center;min-height:0">
+        <div style="background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;padding:32px;box-shadow:0 8px 20px rgba(61,46,37,0.08);min-height:200px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-weight:700;font-size:28px;color:#002E6D;margin-bottom:10px">{{ sensorActiveLabel }}</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.45">{{ sensorActiveDesc }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Radio links -->
+  <section data-label="Radio Links" data-screen-label="05" data-speaker-notes="Two separate radio bands: 2.4 GHz carries pilot control input up to the aircraft, and 5.8 GHz carries live video and telemetry back down. Splitting bands avoids interference between the two." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Communication</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;color:#002E6D;margin:0 0 56px;letter-spacing:-0.01em">Two radio links, two jobs</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;flex:1">
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:48px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:baseline;gap:14px"><span style="font-family:'Playfair Display',serif;font-weight:800;font-size:64px;color:#3E8EDE">2.4</span><span style="font-weight:700;font-size:28px;color:#002E6D">GHz — Transmit (TX)</span></div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.5">Carries control input from the pilot's transmitter to the aircraft's radio receiver, letting the pilot fly at a distance.</div>
+      </div>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #1A5532;padding:48px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:baseline;gap:14px"><span style="font-family:'Playfair Display',serif;font-weight:800;font-size:64px;color:#1A5532">5.8</span><span style="font-weight:700;font-size:28px;color:#002E6D">GHz — Downlink</span></div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.5">Sends live video and telemetry back down from the aircraft to the pilot's display, on a separate band to avoid interference.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Remote controller anatomy (interactive) -->
+  <section data-label="Remote Controller" data-screen-label="06" data-speaker-notes="Click through the front controls — return-to-home, flight mode switch, power — then the back controls — shutter, record, gimbal and zoom dials. This is the RC-N1 controller that ships with the Air 2S." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">The Pilot's Interface · DJI RC-N1</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0 0 28px;letter-spacing:-0.01em">Tap a control, front &amp; back</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;flex:1;min-height:0">
+      <div style="background:#fff;border-radius:20px;padding:24px;box-shadow:0 12px 28px rgba(61,46,37,0.1);display:flex;flex-direction:column;gap:12px;min-height:0">
+        <div style="font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#3E8EDE">Front</div>
+        <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1207/665;background:#F2EDE7">
+          <img src="./assets/anatomy/img05.png" alt="DJI RC-N1 remote controller, front detail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <sc-for list="{{ ctrlFrontHotspots }}" as="hs" hint-placeholder-count="3">
+            <button sc-camel-on-click="{{ hs.onClick }}" aria-label="{{ hs.label }}" style="{{ hs.markerStyle }}"><span class="hs-dot" style="{{ hs.dotStyle }}"></span></button>
+          </sc-for>
+        </div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.35;min-height:54px"><strong style="font-family:'Montserrat',sans-serif;color:#002E6D">{{ ctrlFrontActiveLabel }}</strong> {{ ctrlFrontActiveDesc }}</div>
+      </div>
+      <div style="background:#fff;border-radius:20px;padding:24px;box-shadow:0 12px 28px rgba(61,46,37,0.1);display:flex;flex-direction:column;gap:12px;min-height:0">
+        <div style="font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#1A5532">Back</div>
+        <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:670/322;background:#F2EDE7">
+          <img src="./assets/anatomy/img06.png" alt="DJI RC-N1 remote controller, back detail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <sc-for list="{{ ctrlBackHotspots }}" as="hs" hint-placeholder-count="4">
+            <button sc-camel-on-click="{{ hs.onClick }}" aria-label="{{ hs.label }}" style="{{ hs.markerStyle }}"><span class="hs-dot" style="{{ hs.dotStyle }}"></span></button>
+          </sc-for>
+        </div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.35;min-height:54px"><strong style="font-family:'Montserrat',sans-serif;color:#002E6D">{{ ctrlBackActiveLabel }}</strong> {{ ctrlBackActiveDesc }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Building our own drone -->
+  <section data-label="Case Study" data-screen-label="07" data-speaker-notes="Explore both photos — the build shows the same components we just covered, hand-wired: flight controller, ESC, motor, receiver, LiPo connector, GNSS module, and a 3D-printed, sealant-waterproofed dome. Good moment to connect theory back to hands-on work." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#B24E10;margin-bottom:10px">In the Lab</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0 0 28px;letter-spacing:-0.01em">Building our own quadcopter</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:12px;min-height:0">
+        <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(61,46,37,0.14);flex:1;min-height:0">
+          <img src="./assets/anatomy/img07.png" alt="Custom carbon-fiber quadcopter frame with exposed flight controller, GPS module, and wiring" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <sc-for list="{{ buildHotspots }}" as="hs" hint-placeholder-count="6">
+            <button sc-camel-on-click="{{ hs.onClick }}" aria-label="{{ hs.label }}" style="{{ hs.markerStyle }}"><span class="hs-dot" style="{{ hs.dotStyle }}"></span></button>
+          </sc-for>
+        </div>
+        <div style="font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#3E8EDE">{{ buildActiveLabel }}</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.3">{{ buildActiveDesc }}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;min-height:0">
+        <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(61,46,37,0.14);flex:1;min-height:0">
+          <img src="./assets/anatomy/img08.png" alt="Student assembling a quadcopter frame with rotor guards in the drone lab" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <sc-for list="{{ labHotspots }}" as="hs" hint-placeholder-count="2">
+            <button sc-camel-on-click="{{ hs.onClick }}" aria-label="{{ hs.label }}" style="{{ hs.markerStyle }}"><span class="hs-dot" style="{{ hs.dotStyle }}"></span></button>
+          </sc-for>
+        </div>
+        <div style="font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#B24E10">{{ labActiveLabel }}</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.3">{{ labActiveDesc }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE / CLOSING: references -->
+  <section data-label="References" data-screen-label="08" data-speaker-notes="Thanks everyone — these sources are linked for anyone who wants to go deeper. Happy to take questions." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box;position:relative">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:28px">References &amp; further reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:26px;max-width:1500px">
+      <li style="font-family:'Source Serif 4',serif;font-size:{{ referencesFontSize }}px;line-height:1.4"><em>The Anatomy of a Drone</em>, DroneFly, 2023</li>
+      <li style="font-family:'Source Serif 4',serif;font-size:{{ referencesFontSize }}px;line-height:1.4"><em>Mavic Air 2 / Air 2S User Manual</em>, DJI, 2022</li>
+    </ul>
+    <div style="margin-top:56px;font-family:'Montserrat',sans-serif;font-size:26px;color:#98D5C7;font-weight:600;letter-spacing:0.06em">TUFTS DRONE PROGRAM · TUFTS UNIVERSITY DATA LAB</div>
+  </section>
+
+  <!-- CONTENT: How a gimbal works -->
+  <section data-label="Gimbal Demo" data-screen-label="09" data-speaker-notes="This is a fun analogy — a chicken's head stays level no matter how its body moves, the same principle a mechanical gimbal uses with three motors to keep footage steady. Click the thumbnail to open the video if you want to show it live." style="position:relative;width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Core Components · Gimbal Stabilization</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 32px;letter-spacing:-0.01em">How a gimbal keeps footage steady</h2>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:56px;flex:1;min-height:0">
+      <a href="https://www.youtube.com/watch?v=nLwML2PagbY" target="_blank" rel="noopener" style="border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(61,46,37,0.14);position:relative;display:block">
+        <img src="./assets/anatomy/img09.png" alt="A chicken's head stays level while its body moves, illustrating gimbal-style stabilization" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:rgba(178,78,16,0.85);display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff;margin-left:4px"></span></span>
+        <span style="position:absolute;left:24px;bottom:20px;background:rgba(178,78,16,0.85);color:#fff;font-family:'Montserrat',sans-serif;font-size:24px;font-weight:600;letter-spacing:0.02em;padding:8px 16px;border-radius:100px">Watch the video</span>
+      </a>
+      <div style="display:flex;flex-direction:column;gap:20px;justify-content:center">
+        <div style="background:#F2EDE7;border-radius:16px;border-top:6px solid #3E8EDE;padding:28px">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:8px">The natural version</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.4">A chicken's head stays level and steady no matter how its body bobs and turns — a natural example of the same stabilization principle.</div>
+        </div>
+        <div style="background:#F2EDE7;border-radius:16px;border-top:6px solid #B24E10;padding:28px">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:8px">The mechanical version</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.4">A camera gimbal's three motors constantly counter-rotate against the aircraft's movement, holding the camera level and vibration-free.</div>
+        </div>
+      </div>
+    </div>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+
+<button sc-camel-on-click="{{ toggleNotes }}" style="position:absolute;right:24px;bottom:24px;z-index:50;background:#002E6D;color:#fff;border:none;border-radius:100px;padding:12px 22px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.03em;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.25)">{{ notesButtonLabel }}</button>
+<sc-if value="{{ notesOpen }}">
+  <div style="position:absolute;left:24px;right:24px;bottom:80px;z-index:50;background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;box-shadow:0 16px 36px rgba(0,0,0,0.3);padding:24px 28px;max-height:220px;overflow:auto">
+    <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE;margin-bottom:8px">Speaker Notes · {{ notesSlideLabel }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:20px;line-height:1.5;color:#3D2E25">{{ notesText }}</div>
+  </div>
+</sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;referencesFontSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:34,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:24,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;section&quot;:&quot;References slide&quot;}}">
+const HOTSPOTS = {
+  anatomy: [
+    { id: 'propeller', x: 22, y: 46, label: 'Propeller', desc: 'Twisted blades create uneven air pressure across their two sides, generating the lifting force. Diagonal propeller pairs spin the same direction — one pair clockwise, the other counterclockwise — to cancel out rotational torque.' },
+    { id: 'motor', x: 78, y: 26, label: 'Electric motor', desc: 'Spinning magnets around a fixed coil keep the propeller turning and convert current into thrust.' },
+    { id: 'gimbal', x: 45, y: 63, label: 'Gimbal & camera', desc: '3-axis stabilization keeps footage level and vibration-free as the aircraft moves.' },
+    { id: 'body', x: 56, y: 30, label: 'Aircraft body', desc: 'Houses the battery, flight controller, and radio receiver that tie every part together.' },
+    { id: 'battery', x: 62, y: 20, label: 'Lithium polymer battery', desc: 'A rechargeable LiPo pack delivers the high discharge rates brushless motors need for flight.' },
+  ],
+  sensors: [
+    { id: 'forward', x: 25, y: 26, label: 'Forward vision sensors', desc: 'Twin cameras ahead of the gimbal judge distance to obstacles in front of the aircraft.' },
+    { id: 'downward', x: 74, y: 22, label: 'Downward vision system', desc: 'A downward-facing camera pair reads the ground below to hold position and land precisely.' },
+    { id: 'infrared', x: 88, y: 10, label: 'Infrared sensor', desc: 'Mounted alongside the downward cameras; senses obstacles below in low light where cameras alone fall short.' },
+    { id: 'backward', x: 72, y: 74, label: 'Backward vision system', desc: 'A rear-facing camera pair spots obstacles behind the aircraft during backward flight and braking.' },
+    { id: 'upward', x: 22, y: 62, label: 'Upward vision system', desc: 'An upward-facing sensor pair detects obstacles overhead, such as ceilings or low branches.' },
+    { id: 'ultrasonic', x: 82, y: 38, label: 'Ultrasonic sensors', desc: 'Measure precise distance to the ground for stable, low-altitude hover.', big: true },
+  ],
+  ctrlFront: [
+    { id: 'rth', x: 22, y: 56, label: 'Return-to-home button', desc: 'Hold to send the aircraft automatically back to its takeoff point.' },
+    { id: 'mode', x: 52, y: 57, label: 'Flight mode switch', desc: 'Toggles Tripod, Normal, and Sport modes, trading speed for precision.' },
+    { id: 'power', x: 82, y: 56, label: 'Power button', desc: 'Press once, then press and hold to power the controller on or off.' },
+  ],
+  ctrlBack: [
+    { id: 'shutter', x: 15, y: 53, label: 'Shutter button', desc: 'Captures a still photo from the camera feed.' },
+    { id: 'record', x: 84, y: 53, label: 'Record button', desc: 'Starts and stops video recording.' },
+    { id: 'gimbalDial', x: 13, y: 84, label: 'Gimbal dial', desc: 'Pitches the camera gimbal up or down in flight.' },
+    { id: 'zoomDial', x: 86, y: 84, label: 'Zoom dial', desc: 'Adjusts camera zoom on supported aircraft.' },
+  ],
+  build: [
+    { id: 'flightController', x: 47, y: 53, label: 'Flight controller', desc: 'The onboard computer that reads sensor data and commands each motor\u2019s speed.' },
+    { id: 'esc', x: 29, y: 25, label: 'Electronic speed controller (ESC)', desc: 'Regulates how much power reaches each motor, translating flight-controller commands into speed.' },
+    { id: 'motor', x: 68, y: 18, label: 'Brushless motor', desc: 'Spins the propeller directly with no brushes to wear out, giving efficient, precise thrust control.' },
+    { id: 'receiver', x: 34, y: 79, label: 'Radio receiver & antenna', desc: 'Picks up the pilot\u2019s control signal and passes it to the flight controller.' },
+    { id: 'lipoConnector', x: 75, y: 53, label: 'LiPo battery connector', desc: 'A quick-disconnect plug that feeds main power from the battery pack into the frame.' },
+    { id: 'waterproofFrame', x: 88, y: 42, label: 'Waterproofed frame', desc: 'The 3D-printed arms are sealed with marine sealant to resist moisture on wet-field flights.' },
+  ],
+  lab: [
+    { id: 'gnss', x: 37, y: 78, label: 'GNSS module', desc: 'Provides GPS positioning so the aircraft can hold its location and navigate autonomously.' },
+    { id: 'dome', x: 45, y: 80, label: '3D-printed dome', desc: 'A custom-printed cover protects the electronics stack while keeping the build lightweight.' },
+  ],
+};
+
+const SLIDE_NOTES = [
+  { label: 'Title', text: "Welcome everyone. Today we're covering what's inside the DJI Air 2S — the drone our program flies — and how it senses the world around it." },
+  { label: 'Section', text: "We'll start with the physical aircraft, then move to sensing systems, communication, the controller, and finally a look at a drone we built ourselves in the lab." },
+  { label: 'Core Components', text: "Click through the highlighted points on the drone — propeller, motor, gimbal and camera, and the battery. Pause on gimbal, since that's what the next slide builds on." },
+  { label: 'Vision Sensors', text: "Tap each hotspot to walk through forward, downward, upward, and backward vision, plus infrared and ultrasonic sensing. Emphasize these are what let the Air 2S avoid obstacles and hold position without GPS." },
+  { label: 'Radio Links', text: "Two separate radio bands: 2.4 GHz carries pilot control input up to the aircraft, and 5.8 GHz carries live video and telemetry back down. Splitting bands avoids interference between the two." },
+  { label: 'Remote Controller', text: "Click through the front controls — return-to-home, flight mode switch, power — then the back controls — shutter, record, gimbal and zoom dials. This is the RC-N1 controller that ships with the Air 2S." },
+  { label: 'Case Study', text: "Explore both photos — the build shows the same components we just covered, hand-wired: flight controller, ESC, motor, receiver, LiPo connector, GNSS module, and a 3D-printed, sealant-waterproofed dome. Good moment to connect theory back to hands-on work." },
+  { label: 'References', text: "Thanks everyone — these sources are linked for anyone who wants to go deeper. Happy to take questions." },
+  { label: 'Gimbal Demo', text: "This is a fun analogy — a chicken's head stays level no matter how its body moves, the same principle a mechanical gimbal uses with three motors to keep footage steady. Click the thumbnail to open the video if you want to show it live." },
+];
+
+class Component extends DCLogic {
+  state = { active: { anatomy: null, sensors: null, ctrlFront: null, ctrlBack: null, build: null, lab: null }, notesOpen: false, slideIndex: 0 };
+
+  componentDidMount() {
+    this._onMsg = (e) => {
+      if (e.data && typeof e.data.slideIndexChanged === 'number') this.setState({ slideIndex: e.data.slideIndexChanged });
+    };
+    window.addEventListener('message', this._onMsg);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onMsg);
+  }
+
+  toggle(group, id) {
+    this.setState(s => ({ active: { ...s.active, [group]: s.active[group] === id ? null : id } }));
+  }
+
+  buildGroup(group, defaultLabel, defaultDesc) {
+    const activeId = this.state.active[group];
+    const items = HOTSPOTS[group].map(hs => {
+      const isActive = hs.id === activeId;
+      const boost = hs.big ? 10 : 0;
+      const size = (isActive ? 30 : 22) + boost;
+      return {
+        ...hs,
+        onClick: () => this.toggle(group, hs.id),
+        markerStyle: { position: 'absolute', left: hs.x + '%', top: hs.y + '%', transform: 'translate(-50%,-50%)', width: '52px', height: '52px', border: 'none', background: 'transparent', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' },
+        dotStyle: { display: 'block', width: size + 'px', height: size + 'px', borderRadius: '50%', background: isActive ? '#B24E10' : '#3E8EDE', border: '4px solid #fff', boxShadow: '0 2px 8px rgba(0,0,0,0.35)', transition: 'width 0.15s,height 0.15s,background 0.15s' },
+      };
+    });
+    const active = HOTSPOTS[group].find(hs => hs.id === activeId);
+    return { items, activeLabel: active ? active.label : defaultLabel, activeDesc: active ? active.desc : defaultDesc };
+  }
+
+  renderVals() {
+    const anatomy = this.buildGroup('anatomy', 'Explore the aircraft', 'Tap any highlighted point on the drone to see what that part does.');
+    const sensors = this.buildGroup('sensors', 'Explore the sensors', 'Tap a highlighted point on the image to see how the Air 2S senses its surroundings.');
+    const ctrlFront = this.buildGroup('ctrlFront', 'Front controls', 'Tap a highlighted button to learn what it does.');
+    const ctrlBack = this.buildGroup('ctrlBack', 'Back controls', 'Tap a highlighted button to learn what it does.');
+    const build = this.buildGroup('build', 'The build', 'A bare frame with flight controller, GPS module, and ESCs wired by hand.');
+    const lab = this.buildGroup('lab', 'The lab', 'Same anatomy as a store-bought drone — assembled component by component.');
+    return {
+      referencesFontSize: this.props.referencesFontSize ?? 34,
+      anatomyHotspots: anatomy.items,
+      anatomyActiveLabel: anatomy.activeLabel,
+      anatomyActiveDesc: anatomy.activeDesc,
+      sensorHotspots: sensors.items,
+      sensorActiveLabel: sensors.activeLabel,
+      sensorActiveDesc: sensors.activeDesc,
+      ctrlFrontHotspots: ctrlFront.items,
+      ctrlFrontActiveLabel: ctrlFront.activeLabel,
+      ctrlFrontActiveDesc: ctrlFront.activeDesc,
+      ctrlBackHotspots: ctrlBack.items,
+      ctrlBackActiveLabel: ctrlBack.activeLabel,
+      ctrlBackActiveDesc: ctrlBack.activeDesc,
+      buildHotspots: build.items,
+      buildActiveLabel: build.activeLabel,
+      buildActiveDesc: build.activeDesc,
+      labHotspots: lab.items,
+      labActiveLabel: lab.activeLabel,
+      labActiveDesc: lab.activeDesc,
+      notesOpen: this.state.notesOpen,
+      notesButtonLabel: this.state.notesOpen ? 'Hide Speaker Notes' : 'Speaker Notes',
+      notesSlideLabel: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).label,
+      notesText: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).text,
+      toggleNotes: () => this.setState(s => ({ notesOpen: !s.notesOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

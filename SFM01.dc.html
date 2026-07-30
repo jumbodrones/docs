@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+
+</helmet>
+<div style="position:relative;width:100%;height:100%">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- 01 TITLE -->
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="We need to talk … about Photogrammetry and Structure from Motion, or SfM." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:grid;grid-template-columns:1fr 840px;box-sizing:border-box;font-family:'Montserrat',sans-serif;position:relative;overflow:hidden">
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0 96px 110px;box-sizing:border-box">
+      <div style="display:flex;align-items:center;gap:16px"><img src="./assets/sfm-01/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/sfm-01/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+      <div>
+        <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">Tufts University Data Lab</div>
+        <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:88px;line-height:1.0;letter-spacing:-0.02em;margin:0 0 24px">Photogrammetry<br>&amp; Structure<br>from Motion (SfM)</h1>
+        <p style="font-family:'Source Serif 4',serif;font-size:36px;line-height:1.35;max-width:900px;color:rgba(255,255,255,0.9);margin:0">Wait, what? You can do <em>that</em> with images?</p>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding-right:64px;font-size:24px;color:rgba(255,255,255,0.75)"><span>Part I</span><span>Tufts Drone Program</span></div>
+    </div>
+    <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-end;padding:0 20px 0 0">
+      <img src="./assets/sfm-01/img03.png" alt="Mapping drone" style="width:150%;max-width:none;height:auto;display:block;filter:drop-shadow(0 30px 50px rgba(0,0,0,0.5))">
+    </div>
+  </section>
+
+  <!-- 02 SECTION: A little history -->
+  <section data-label="A Little History" data-screen-label="02" data-speaker-notes="Let's start with a little history. The science of photogrammetry has been around a long time — probably since the advent of photography, and certainly long enough that many have built entire careers on the subject. Not too surprisingly, the concepts are relatively simple; the math is not." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:grid;grid-template-columns:1fr 1.35fr;gap:60px;align-items:center;padding:100px 110px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:56px;left:110px;display:flex;align-items:center;gap:14px"><img src="./assets/sfm-01/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div>
+      <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">A little history</div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:76px;line-height:1.05;margin:0 0 34px">Measurement from light</h2>
+      <p style="font-family:'Source Serif 4',serif;font-size:32px;line-height:1.45;margin:0 0 30px;max-width:760px">Greek for measurement from light. More practically: measurement from photographs — or in our case, digital images.</p>
+      <div style="background:rgba(255,255,255,0.1);border-left:6px solid #FFC72C;border-radius:12px;padding:28px 32px;max-width:760px">
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.5">Cornele B. Adams patented a two-balloon aerial camera method in 1893. Francis Moffitt's 1959 textbook carried photogrammetry into dentistry, accident reconstruction, and hip replacement.</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:28px;align-items:center">
+      <img src="./assets/sfm-01/img04.png" alt="Moffitt, Photogrammetry, 1959 textbook cover" style="width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,0.42)">
+      <img src="./assets/sfm-01/img05.png" alt="C. B. Adams 1893 patent drawing, Method of Photogrammetry" style="width:100%;height:auto;display:block;border-radius:10px;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,0.42)">
+    </div>
+  </section>
+
+  <!-- 03 DEFINITION -->
+  <section data-label="Definition" data-screen-label="03" data-speaker-notes="We are interested in aerial photogrammetry — measurement from aerial photographs, more commonly digital images. ASPRS defines photogrammetry as the art, science, and technology of obtaining reliable information about physical objects and the environment through processes of recording, measuring and interpreting photographic images and patterns of recorded radiant electromagnetic energy and other phenomena." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">A little history</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 36px;letter-spacing:-0.01em">What photogrammetry is</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:26px;justify-content:center">
+        <blockquote style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.45;margin:0;border-left:6px solid #3E8EDE;padding-left:32px">“The science and technology of obtaining reliable information about physical objects and the environment through the process of recording, measuring and interpreting photographic images and patterns of electromagnetic radiant imagery and other phenomena.”</blockquote>
+        <div style="font-size:24px;color:#63493A;font-weight:600;letter-spacing:0.04em">— American Society for Photogrammetry and Remote Sensing</div>
+        <div style="background:#F2EDE7;border-radius:16px;border-top:6px solid #1A5532;padding:28px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.5">Above right: a stereoscope viewing 1990 color-infrared overlapping images of the Connecticut River near Northampton, MA.</div>
+        </div>
+      </div>
+      <div style="position:relative;border-radius:20px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 12px 28px rgba(61,46,37,0.14)">
+        <img src="./assets/sfm-01/img06.jpg" alt="Stereoscope viewing overlapping color infrared aerial photographs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TRADITIONAL -->
+  <section data-label="Traditional Aerial Photography" data-screen-label="04" data-speaker-notes="It helps to distinguish traditional aerial photography from modern Structure from Motion. Using the image from Dr. John Jensen's Principles of Remote Sensing: traditional photogrammetry used extremely high quality — and expensive — cameras with known intrinsic metrics. The aircraft flew a very controlled, stable path enabling capture at or near nadir, and high-accuracy ground control was required. With all that rigor, fewer parameters are needed to resolve image scale and ground feature dimensions. Nadir is the direction pointing directly below a particular location." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Two approaches</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 34px;letter-spacing:-0.01em">Traditional aerial photography</h2>
+    <div style="display:grid;grid-template-columns:1fr 1.05fr;gap:52px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:20px;justify-content:center">
+        <div style="background:#fff;border-radius:16px;border-left:6px solid #3E8EDE;padding:26px 30px;box-shadow:0 8px 20px rgba(61,46,37,0.08);font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">High-quality camera with known intrinsic geometry — focal length, lens, distortion, orientation.</div>
+        <div style="background:#fff;border-radius:16px;border-left:6px solid #3E8EDE;padding:26px 30px;box-shadow:0 8px 20px rgba(61,46,37,0.08);font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Controlled flying height with high-accuracy position (GPS and IMU).</div>
+        <div style="background:#fff;border-radius:16px;border-left:6px solid #3E8EDE;padding:26px 30px;box-shadow:0 8px 20px rgba(61,46,37,0.08);font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Photographs captured at nadir.</div>
+        <div style="background:#fff;border-radius:16px;border-left:6px solid #3E8EDE;padding:26px 30px;box-shadow:0 8px 20px rgba(61,46,37,0.08);font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Ground control.</div>
+        <div style="background:#002E6D;color:#fff;border-radius:16px;padding:26px 30px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">With all of the control and precision, there are fewer parameters to resolve.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center">
+        <div style="background:#fff;border-radius:20px;border:1px solid #DDD3C8;padding:28px;box-shadow:0 12px 28px rgba(61,46,37,0.12)">
+          <img src="./assets/sfm-01/img07.png" alt="Diagram: flightline of aerial photography with 60 percent overlap and stereoscopic model" style="width:100%;height:auto;display:block">
+        </div>
+        <div style="font-size:24px;color:#63493A">Source: Jensen, 2007</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SfM ORIGINS -->
+  <section data-label="SfM Origins" data-screen-label="05" data-speaker-notes="A real game changer came out of the University of British Columbia in 1999 — David Lowe's research, Object Recognition from Local Scale-Invariant Features. You become a true believer when you see work like Snavely et al. in 2006, taking crowdsourced tourist photos to render the Colosseum. Bottom right is an example closer to our practice: a flying camera capturing images from different altitudes and angles." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:12px">Two approaches</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;margin:0 0 40px;letter-spacing:-0.01em">Modern: Structure from Motion (SfM)</h2>
+    <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:44px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:rgba(255,255,255,0.08);border-radius:20px;border-top:8px solid #FFC72C;padding:24px 28px">
+          <div style="font-weight:700;font-size:26px;color:#FFC72C;margin-bottom:8px">Lowe, 1999</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">Scale-invariant features made automated matching across photographs possible.</div>
+        </div>
+        <div style="flex:1;min-height:0;border-radius:16px;overflow:hidden;background:#fff;position:relative">
+          <img src="./assets/sfm-01/img08.png" alt="First page of Lowe 1999, Object Recognition from Local Scale-Invariant Features" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;min-height:0">
+        <div style="background:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;flex:1;min-height:0">
+          <img src="./assets/sfm-01/img09.png" alt="Snavely 2006: crowdsourced photos of the Colosseum reconstructed in 3D" style="width:100%;height:auto;max-height:100%;object-fit:contain;display:block">
+        </div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center">
+          <div style="background:#fff;border-radius:16px;padding:16px"><img src="./assets/sfm-01/img10.png" alt="Overlapping drone images with matched keypoints highlighted" style="width:100%;height:auto;display:block"></div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:rgba(255,255,255,0.9)">Snavely et al., 2006 — and the same idea from a flying camera.<div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:12px">OpenTopography</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SfM HOW IT WORKS -->
+  <section data-label="How SfM Works" data-screen-label="06" data-speaker-notes="Structure from Motion takes advantage of advances in computer vision and processing to create 3D models from 2D images. Lower cost, less robust cameras can be used from less stable platforms — drones, kites, balloons, even smartphones, as you experienced in the Polycam lab. To model landscapes from the air it is still helpful to keep the camera mostly at nadir, but variation can be accommodated by image processing algorithms. Many more images generate a massive number of keypoints and tie points; with enough tie points the camera position can be back-calculated. Photographs should be taken from different points in the scene — that difference in apparent position is parallax, which lets the software calculate depth and render a 3D model." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Two approaches</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 34px;letter-spacing:-0.01em">How Structure from Motion works</h2>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:52px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center">
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #1A5532;padding:24px 28px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Consumer-grade digital cameras.</div>
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #1A5532;padding:24px 28px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Less rigor in flying height, lower accuracy position.</div>
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #1A5532;padding:24px 28px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Photographs captured mostly at nadir.</div>
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #1A5532;padding:24px 28px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Ground Control can improve and measure accuracy.</div>
+        <div style="background:#002E6D;color:#fff;border-radius:16px;padding:24px 28px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45">Many overlapping images generate a massive number of <strong>keypoints</strong> and <strong>tie points</strong> — enough to recover camera details and pose.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center">
+        <div style="background:#fff;border:1px solid #DDD3C8;border-radius:20px;padding:28px;box-shadow:0 12px 28px rgba(61,46,37,0.12)">
+          <img src="./assets/sfm-01/img11.png" alt="Diagram: a moving camera capturing corresponding feature points to build a 3D model" style="width:100%;height:auto;display:block">
+        </div>
+        <div style="font-size:24px;color:#63493A">Source: OpenTopography</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 WORKFLOW -->
+  <section data-label="Generic Workflow" data-screen-label="07" data-speaker-notes="This is a good representative workflow laid out by Maggi Kelly, Affiliate Professor in the Department of Geography at UC Berkeley, modified from a DroneCamp 2022 presentation. Also see Duffy, Anderson, Shapiro, Spina Avino, DeBell and Glover-Kapfer, 2020, Drone Technologies for Conservation, WWF Conservation Technology Series 1(5) — page 74." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px">
+      <div>
+        <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">From images to products</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0;letter-spacing:-0.01em">A generic SfM workflow</h2>
+      </div>
+      <div style="font-size: 20px; color: #63493A; text-align: left; max-width: 640px; line-height: 1.4">Source: Maggi Kelly, 2022 · see also p. 74 in Duffy&nbsp;et&nbsp;al., 2020, <em>Drone Technologies for Conservation</em>, WWF</div>
+    </div>
+    <div style="flex:1;min-height:0;background:#fff;border:1px solid #DDD3C8;border-radius:20px;box-shadow:0 12px 28px rgba(61,46,37,0.12);padding:24px;position:relative">
+      <img src="./assets/sfm-01/img12.jpg" alt="Generic SfM workflow: image collection, keypoint matching, camera calibration, geolocation, densification, point cloud, meshes, DTM, DSM and orthomosaic. The word stitching is crossed out in red." style="position:absolute;inset:24px;width:calc(100% - 48px);height:calc(100% - 48px);object-fit:contain;display:block">
+    </div>
+  </section>
+
+  <!-- 08 TAKEAWAYS -->
+  <section data-label="Key Takeaways" data-screen-label="08" data-speaker-notes="Key concepts: photogrammetry uses images and precise geometric principles to measure and model real-world objects. SfM is a computer vision technique that builds flexible 3D models from overlapping images, even when captured with consumer-grade cameras and less controlled flight paths. The process depends heavily on many overlapping images and matching keypoints between them. Ground control points enhance accuracy, but SfM can still function effectively without them — making it accessible and versatile for mapping, surveying, and 3D reconstruction." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/sfm-01/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:20px">Part I wrap-up</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:72px;margin:0 0 48px;letter-spacing:-0.01em">Key takeaways</h2>
+    <div style="display:flex;flex-direction:column;gap:28px;max-width:1560px">
+      <div style="display:flex;align-items:flex-start;gap:26px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#FFC72C;min-width:60px">01</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.45">Photogrammetry enables measurement from images using precise geometry.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:26px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#FFC72C;min-width:60px">02</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.45">Structure from Motion leverages computer vision for flexible 3D modeling.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:26px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#FFC72C;min-width:60px">03</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.45">SfM allows use of consumer-grade cameras and less controlled flight paths.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:26px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#FFC72C;min-width:60px">04</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.45">SfM workflows rely on massive image overlap and keypoint matching.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:26px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#FFC72C;min-width:60px">05</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.45">Ground control improves accuracy but is not strictly required in SfM.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 RESOURCES -->
+  <section data-label="Resources" data-screen-label="09" data-speaker-notes="This ends Part I. If you have questions, read Chapter 7 from the 2020 WWF Conservation Technology report — it's very well written at an accessible level. Also experiment with your own SfM modeling using applications such as Polycam. OpenTopography did an excellent workshop on Structure from Motion in 2021." style="position:relative;width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:12px">Resources (some)</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;margin:0 0 40px;letter-spacing:-0.01em">Where to go next</h2>
+    <div style="display:grid;grid-template-columns:0.9fr 0.75fr 1.35fr;gap:40px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+        <div style="flex:1;min-height:0;background:#fff;border-radius:16px;overflow:hidden;position:relative"><img src="./assets/sfm-01/img13.jpg" alt="Cover of WWF Conservation Technology Series: Drones for Conservation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+        <div style="font-family:'Source Serif 4',serif;font-size:{{ resourcesFontSize }}px;line-height:1.4">Duffy et al., 2020 — <em>Drone Technologies for Conservation</em>, WWF Conservation Technology Series 1(5). Read Chapter 7.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+        <div style="flex:1;min-height:0;background:#fff;border-radius:16px;overflow:hidden;position:relative"><img src="./assets/sfm-01/img14.png" alt="Figure 7.1 overview of the general SfM process" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block"></div>
+        <div style="font-family:'Source Serif 4',serif;font-size:{{ resourcesFontSize }}px;line-height:1.4">Fig. 7.1 — overview of the general SfM process, after Westoby et al. (2012).</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;justify-content:center">
+        <div style="background:#fff;border-radius:16px;padding:24px 28px"><img src="./assets/sfm-01/img15.png" alt="OpenTopography logo" style="width:100%;max-width:520px;height:auto;display:block"></div>
+        <div style="background:rgba(255,255,255,0.1);border-left:6px solid #FFC72C;border-radius:12px;padding:26px 30px;font-family:'Source Serif 4',serif;font-size:{{ resourcesFontSize }}px;line-height:1.45">OpenTopography's 2021 Structure from Motion workshop — an excellent, practical walkthrough.</div>
+        <div style="background:rgba(255,255,255,0.1);border-left:6px solid #98D5C7;border-radius:12px;padding:26px 30px;font-family:'Source Serif 4',serif;font-size:{{ resourcesFontSize }}px;line-height:1.45">Experiment with your own SfM modeling using an app such as Polycam.</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:26px;color:#FFC72C;font-weight:600;letter-spacing:0.06em">TUFTS DRONE PROGRAM · TUFTS UNIVERSITY DATA LAB</div>
+      </div>
+    </div>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+
+<button sc-camel-on-click="{{ toggleNotes }}" style="position:absolute;right:24px;bottom:24px;z-index:50;background:#002E6D;color:#fff;border:none;border-radius:100px;padding:12px 22px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.03em;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.25)">{{ notesButtonLabel }}</button>
+<sc-if value="{{ notesOpen }}">
+  <div style="position:absolute;left:24px;right:24px;bottom:80px;z-index:50;background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;box-shadow:0 16px 36px rgba(0,0,0,0.3);padding:24px 28px;max-height:240px;overflow:auto">
+    <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE;margin-bottom:8px">Speaker Notes · {{ notesSlideLabel }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:20px;line-height:1.5;color:#3D2E25">{{ notesText }}</div>
+  </div>
+</sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;resourcesFontSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:26,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:22,&quot;max&quot;:34,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;section&quot;:&quot;Resources slide&quot;}}">
+const SLIDE_NOTES = [
+  { label: 'Title', text: "We need to talk … about Photogrammetry and Structure from Motion, or SfM." },
+  { label: 'A Little History', text: "Let's start with a little history. The science of photogrammetry has been around for a long time, probably since the advent of photography and certainly long enough that many have built entire careers on the subject and its practice. Maybe not too surprisingly, the concepts are relatively simple, but the math is not. The image on the right is from Cornele B. Adams' 1893 patent application for a method involving two balloons with cameras aloft to capture a vertical view of the ground. His application reads in part: \u201CBy means of aerial photography vertical views of flat tracts have been so taken that if the altitude from the photographs be known, the horizontal configuration of such tract can be reproduced topographically, and the distance between the different horizontal points determined.\u201D The book on the left is a 1959 textbook by Francis Moffitt (1922\u20132007), professor of civil engineering at UC Berkeley. I like to include Dr. Moffitt because of his creative spirit — using photogrammetry, or writing about its use, in dentistry and orthodontics to study teeth and jaw movements, in accident reconstruction, and in hip replacements." },
+  { label: 'Definition', text: "We are interested in aerial photogrammetry, or measurement from aerial photographs — more commonly digital images. Photogrammetry has been defined by the American Society for Photogrammetry and Remote Sensing (ASPRS) as the art, science, and technology of obtaining reliable information about physical objects and the environment through processes of recording, measuring and interpreting photographic images and patterns of recorded radiant electromagnetic energy and other phenomena." },
+  { label: 'Traditional Aerial Photography', text: "With respect to photogrammetry, I find it helpful to distinguish between traditional aerial photography and more modern Structure from Motion. Taking a look at the image provided by Dr. John Jensen in his book, Principles of Remote Sensing: photogrammetry from traditional aerial photography used extremely high quality (and expensive) cameras with known intrinsic metrics. The aircraft was in a very controlled, thus stable flight, enabling the capture of photographs at nadir or near nadir. The use of high-accuracy ground control was also required. With all of the rigor and control, fewer parameters are needed to resolve to image scale and ground feature dimensions. The nadir is the direction pointing directly below a particular location." },
+  { label: 'SfM Origins', text: "A real game changer came out of the University of British Columbia in 1999 from David Lowe and his research \u201CObject Recognition from Local Scale-Invariant Features.\u201D You become a true believer when you see research like Snavely et al. in 2006, taking tourist photos from a crowdsourced photo collection database to render the Colosseum. You see in the bottom right an example that is more to our practice — a flying camera capturing images from different altitudes and angles." },
+  { label: 'How SfM Works', text: "Structure from Motion takes advantage of advances in computer vision and processing to create 3D models from 2D images. With these advances, lower cost and less robust cameras can be used from less stable platforms, like drones, kites, balloons, and even smartphones (as you experienced in the Polycam lab). To model landscapes from the air, it is still helpful to have the camera angle at mostly nadir, but variation can be accommodated via image processing algorithms. Many more images can be processed to generate a massive number of keypoints and tie points between images. With enough tie points, the camera position can be back calculated. When creating a 3D model using SfM, photographs should be taken from different points in the scene. This difference in apparent position is called parallax, which allows the software to calculate depth, making it possible to render a 3D model." },
+  { label: 'Generic Workflow', text: "This is a good representative workflow laid out by Maggi Kelly, Affiliate Professor, Department of Geography, University of California, Berkeley. This graphic is modified from a DroneCamp 2022 presentation by Dr. Kelly. Also see Duffy, J.P., Anderson, K., Shapiro, A.C., Spina Avino, F., L. DeBell & Glover-Kapfer, P. 2020, Drone Technologies for Conservation, WWF Conservation Technology Series 1(5), WWF." },
+  { label: 'Key Takeaways', text: "This slide highlights key concepts in photogrammetry and Structure from Motion. Photogrammetry uses images and precise geometric principles to measure and model real-world objects. SfM is a computer vision technique that builds flexible 3D models from overlapping images, even when captured with consumer-grade cameras and less controlled flight paths. The process depends heavily on having many overlapping images and matching keypoints between them to reconstruct the scene accurately. While ground control points can enhance the accuracy of the models, SfM can still function effectively without them, making it accessible and versatile for various applications such as mapping, surveying, and 3D reconstruction." },
+  { label: 'Resources', text: "This ends Part I. If you have questions, read Chapter 7 from the 2020 WWF Conservation Technology report, which I think is very well written at an accessible level. Also, experiment with your own SfM modeling using applications such as Polycam. OpenTopography did an excellent workshop on Structure from Motion in 2021." },
+];
+
+class Component extends DCLogic {
+  state = { notesOpen: false, slideIndex: 0 };
+
+  componentDidMount() {
+    this._onMsg = (e) => {
+      if (e.data && typeof e.data.slideIndexChanged === 'number') this.setState({ slideIndex: e.data.slideIndexChanged });
+    };
+    window.addEventListener('message', this._onMsg);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onMsg);
+  }
+
+  renderVals() {
+    return {
+      resourcesFontSize: this.props.resourcesFontSize ?? 26,
+      notesOpen: this.state.notesOpen,
+      notesButtonLabel: this.state.notesOpen ? 'Hide Speaker Notes' : 'Speaker Notes',
+      notesSlideLabel: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).label,
+      notesText: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).text,
+      toggleNotes: () => this.setState(s => ({ notesOpen: !s.notesOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

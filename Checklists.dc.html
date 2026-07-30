@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+
+</helmet>
+<div style="position:relative;width:100%;height:100%">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- TITLE -->
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="Today we're talking about checklists — not as busywork, but as a discipline that separates safe, repeatable flight operations from lucky ones." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div style="display:flex;align-items:center;gap:16px"><img src="./assets/checklists/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/checklists/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+    <div>
+      <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">Tufts University Data Lab</div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:118px;line-height:0.98;letter-spacing:-0.02em;margin:0 0 30px">Checklists</h1>
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.4;max-width:1100px;color:rgba(255,255,255,0.9);margin:0">Standard practice — why every flight starts with a list, not memory.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:24px;color:rgba(255,255,255,0.75)"><span>Operational Discipline</span><span>Tufts Drone Program</span></div>
+  </section>
+
+  <!-- SECTION: What is a checklist -->
+  <section data-label="Section" data-screen-label="02" data-speaker-notes="This connects directly to your Initial Checklist assignment — one of the most important pieces of this course. Your checklists should be based on your own class experiences: what went wrong, what needs improvement. It's a living document you keep refining, emphasizing process over product and building the habit of mind to create checklists for future drone work." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/checklists/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">What Is a Checklist?</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:88px;line-height:1.05;margin:0 0 48px;max-width:1500px">More than a form</h2>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;max-width:1600px">
+      <sc-for list="{{ checklistTags }}" as="tag" hint-placeholder-count="5">
+        <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);border-radius:100px;padding:18px 32px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:26px">{{ tag }}</div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ASSIGNMENT -->
+  <section data-label="Assignment" data-screen-label="03" data-speaker-notes="Your Initial Checklist assignment: pre-flight and post-flight checklists, understandable to other members of your flight team, covering equipment, operations, and safety. Build it in a Google Doc so version history shows your progression, and share it with jon.caris@tufts.edu. Developing your own — rather than copying a third-party list — is what establishes safety and workflows as a habit of mind." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Canvas Assignment</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 36px;letter-spacing:-0.01em">Initial Checklists</h2>
+    <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:48px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:20px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12);background:#fff">
+        <img src="./assets/checklists/img03.png" alt="Canvas assignment page: Initial Checklists" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #3E8EDE;padding:28px">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:10px">What to build</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">A pre-flight and a post-flight checklist, understandable to everyone on your flight team — equipment, operations, and safety.</div>
+        </div>
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #1A5532;padding:28px">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:10px">How to submit</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">In a Google Doc, so version history shows your progression. Share with jon.caris@tufts.edu.</div>
+        </div>
+        <div style="background:#002E6D;color:#fff;border-radius:16px;padding:28px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">Developing your own — not copying a third-party list — is what establishes safety and workflow as a habit of mind.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Checklist inspiration -->
+  <section data-label="Checklist Inspiration" data-screen-label="04" data-speaker-notes="I take inspiration from The Checklist Manifesto by Atul Gawande, a surgeon, writer, and public health leader. He distinguishes errors of ignorance (we don't know enough) from errors of ineptitude (we don't make proper use of what we know) — and argues modern failure is really about the second kind." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:grid;grid-template-columns:1fr 470px;gap:76px;align-items:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div>
+      <div class="eyebrow" style="color:#98D5C7;margin-bottom:32px">Checklist Inspiration</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:46px">
+        <div style="background:rgba(255,255,255,0.08);border-radius:20px;border-top:8px solid #E85A2A;padding:36px">
+          <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;margin-bottom:14px;color:#FFC72C">Ignorance</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.5">We don't yet know what works.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:20px;border-top:8px solid #3E8EDE;padding:36px">
+          <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;margin-bottom:14px;color:#FFC72C">Ineptitude</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.5">We know what works, but fail to apply it correctly.</div>
+        </div>
+      </div>
+      <blockquote style="font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:34px;line-height:1.4;margin:0;border-left:6px solid #3E8EDE;padding-left:32px">“The volume and complexity of what we know has exceeded our individual ability to deliver its benefits correctly, safely, or reliably.”</blockquote>
+      <div style="margin-top:24px;font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7">— Atul Gawande, <em>The Checklist Manifesto</em></div>
+    </div>
+    <img src="./assets/checklists/img04.jpg" alt="Cover of The Checklist Manifesto by Atul Gawande" style="width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 20px 44px rgba(0,0,0,0.42)">
+  </section>
+
+  <!-- CONTENT: Why we need checklists -->
+  <section data-label="Why Checklists" data-screen-label="05" data-speaker-notes="Three forces push toward checklists: complexity that outstrips any one person's capacity, the fallibility of memory under strain, and the constant tension between getting airborne and doing it safely." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Checklist Inspiration</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Why we need them</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;flex:1">
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:40px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Complexity</div>
+        <div style="font-family: 'Source Serif 4',serif; font-size: 24px; line-height: 1.5; width: 476px; height: 119px">We are living in an exceedingly complex world full of distractions and information overload.</div><div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5">“Too much airplane for one person to fly” — the verdict from the 1935 Air Corps test of the Boeing Model 299.</div>
+      </div>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #B24E10;padding:40px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Fallibility of memory &amp; perfromance</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5">Human memory and attention are least reliable exactly when strain and stress are highest.</div>
+      </div>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #1A5532;padding:40px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Gravity vs. effectiveness</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5">An inherent tension always exists between the pull to get airborne and the discipline it takes to do it well.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE: Model 299 -->
+  <section data-label="Model 299" data-screen-label="06" data-speaker-notes="The Board of Officers convened at Wright Field found the crash wasn't structural or engine failure — it was the locked rudder and elevator controls. The pilot was Chief of the Flying Branch, Material Division — clearly well trained. It was simply too much airplane for one person to fly." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Checklist Inspiration</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0 0 28px;letter-spacing:-0.01em">The Model 299, 1935</h2>
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:48px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(61,46,37,0.14)">
+        <img src="./assets/checklists/img05.jpg" alt="Wreckage of the Boeing Model 299 after its fatal 1935 test crash" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;justify-content:center">
+        <div style="background:#fff;border-radius:16px;border-top:6px solid #B24E10;padding:32px;box-shadow:0 8px 20px rgba(61,46,37,0.08)">
+          <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.5">The most advanced bomber of its day crashed on a test flight after the crew, all experienced pilots, forgot to release a control lock — too much airplane for memory alone.</div>
+        </div>
+        <div style="background:#002E6D;color:#fff;border-radius:16px;padding:28px">
+          <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5"><em>Life Magazine</em>, August 24, 1942</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:8px;line-height:1.4;word-break:break-word">nationalmuseum.af.mil/Visit/Museum-Exhibits/.../model-299-crash</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COCKPIT CONVERSATION -->
+  <section data-label="Cockpit Conversation" data-screen-label="07" data-speaker-notes="This is what the response looked like: a printed form the copilot fishes out of a briefcase, and a call-and-response between pilot and copilot covering every switch, valve, and control before the aircraft moves. Read a few lines aloud — the rhythm is exactly what a good checklist feels like in practice." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Life Magazine, August 24 1942</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 24px;letter-spacing:-0.01em">Cockpit conversation</h2>
+    <div style="display:grid;grid-template-columns:2.5fr 1fr;gap:32px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;background:#fff;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+        <img src="./assets/checklists/img06.jpg" alt="Life Magazine 1942 article, Cockpit Conversation: the pilot and copilot checklist call-and-response" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px;min-height:0">
+        <div style="position:relative;flex:1;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+          <img src="./assets/checklists/img07.png" alt="Flying Fortress instrument board: flight instrument dials, engine dials, and four throttle handles" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #3E8EDE;padding:26px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">“Check list,” says the pilot. His copilot fishes out a printed form from a briefcase — and only after the last call-and-response is he ready to lift the Flying Fortress into the air.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON: Types of checklists -->
+  <section data-label="Types of Checklists" data-screen-label="08" data-speaker-notes="With Read-Do, they carry out tasks as they check them off — more like a recipe. With Do-Confirm, team members work from memory and experience, then pause to confirm everything was done. Beginners usually start with Read-Do; with experience it can evolve into Do-Confirm." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Types of Checklists</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Two ways to implement</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;flex:1">
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #1A5532;padding:48px;display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#002E6D">Read – Do</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.5">Each task is read aloud, carried out, and checked off in sequence — more like following a recipe than working from memory.&nbsp; Most checklists begin here....</div>
+      </div><div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:48px;display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#002E6D">Do – Confirm</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.5">Tasks are carried out from memory and experience, then the checklist confirms that everything that was supposed to happen actually did.&nbsp; Many checklists evolve to Do Confirm...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Operational considerations -->
+  <section data-label="Operational Considerations" data-screen-label="09" data-speaker-notes="These emphasize teamwork in your practice — recall day one, no one flies alone. A non-flying team member starts the checklist since the pilot in command already has enough responsibility. Keep different checklists per activity, treat it as total team responsibility, and land on a clear go/no-go." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#B24E10;margin-bottom:12px">In the field</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Operational considerations</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;flex:1">
+      <sc-for list="{{ operationalItems }}" as="item" hint-placeholder-count="4">
+        <div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 8px 20px rgba(61,46,37,0.08);display:flex;align-items:flex-start;gap:20px">
+          <div style="min-width:12px;height:12px;border-radius:50%;background:#3E8EDE;margin-top:12px"></div>
+          <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">{{ item }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CONTENT: Design considerations -->
+  <section data-label="Design Considerations" data-screen-label="10" data-speaker-notes="On writing the checklist itself: time it, keep it to one page if possible, build in deliberate pause points of no more than 60 seconds, order steps logically, and respect the environment you're working in." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#B24E10;margin-bottom:12px">Writing the list</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Design considerations</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;flex:1">
+      <sc-for list="{{ designItems }}" as="item" hint-placeholder-count="5">
+        <div style="background:#F2EDE7;border-radius:16px;padding:32px;box-shadow:0 8px 20px rgba(61,46,37,0.06);display:flex;align-items:flex-start;gap:20px">
+          <div style="min-width:12px;height:12px;border-radius:50%;background:#1A5532;margin-top:12px"></div>
+          <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">{{ item }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CONTENT: Final thoughts -->
+  <section data-label="Final Thoughts" data-screen-label="11" data-speaker-notes="Fallibility of human memory and attention is greatest under stress. Don't get into a situation of too much drone for one person to fly. Checklists improve outcomes without increasing skill or knowledge." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:32px">Final Thoughts</div>
+    <div style="display:flex;flex-direction:column;gap:32px;max-width:1550px">
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#FFC72C">01</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.5">Fallibility of human memory and attention is greatest under stress.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#FFC72C">02</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.5">Don’t get into a situation of “too much drone for one person to fly.”</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#FFC72C">03</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.5">Checklists improve outcomes without requiring an increase in skill or knowledge.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING: References -->
+  <section data-label="References" data-screen-label="12" data-speaker-notes="Be sure to check the resources on Canvas for examples of previous student checklists — alongside Gawande's book and the Wikipedia entry on preflight checklists." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box;position:relative">
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:28px">References &amp; further reading</div>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:26px;max-width:1500px">
+      <li style="font-family:'Source Serif 4',serif;font-size:{{ referencesFontSize }}px;line-height:1.4"><em>The Checklist Manifesto</em>, Atul Gawande — atulgawande.com/book/the-checklist-manifesto</li>
+      <li style="font-family:'Source Serif 4',serif;font-size:{{ referencesFontSize }}px;line-height:1.4">Preflight checklist, Wikipedia — en.wikipedia.org/wiki/Preflight_checklist</li>
+      <li style="font-family:'Source Serif 4',serif;font-size:{{ referencesFontSize }}px;line-height:1.4">See Course Resources on Canvas for real checklist examples</li>
+    </ul>
+    <div style="margin-top:56px;font-family:'Montserrat',sans-serif;font-size:26px;color:#FFC72C;font-weight:600;letter-spacing:0.06em">TUFTS DRONE PROGRAM · TUFTS UNIVERSITY DATA LAB</div>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+
+<button sc-camel-on-click="{{ toggleNotes }}" style="position:absolute;right:24px;bottom:24px;z-index:50;background:#002E6D;color:#fff;border:none;border-radius:100px;padding:12px 22px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.03em;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.25)">{{ notesButtonLabel }}</button>
+<sc-if value="{{ notesOpen }}">
+  <div style="position:absolute;left:24px;right:24px;bottom:80px;z-index:50;background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;box-shadow:0 16px 36px rgba(0,0,0,0.3);padding:24px 28px;max-height:220px;overflow:auto">
+    <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE;margin-bottom:8px">Speaker Notes · {{ notesSlideLabel }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:20px;line-height:1.5;color:#3D2E25">{{ notesText }}</div>
+  </div>
+</sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;referencesFontSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:34,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:24,&quot;max&quot;:44,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;section&quot;:&quot;References slide&quot;}}">
+const CHECKLIST_TAGS = ['Represents Experience', 'Living Document', 'Process', 'Habit of Mind', 'Assignment'];
+
+const OPERATIONAL_ITEMS = [
+  'Non-flying team member starts and runs the checklist.',
+  'Different checklists for different activities — mapping vs. videography.',
+  'Total team responsibility, not just the pilot in command.',
+  'End on a clear go / no-go decision.',
+];
+
+const DESIGN_ITEMS = [
+  'Time the checklist.',
+  'Try to limit it to one page.',
+  'Build in deliberate pause points, no more than 60 seconds each.',
+  'Order steps logically and/or sequentially.',
+  'Design with respect for the environment you\u2019re operating in.',
+];
+
+const SLIDE_NOTES = [
+  { label: 'Title', text: "Today we're talking about checklists — not as busywork, but as a discipline that separates safe, repeatable flight operations from lucky ones." },
+  { label: 'Section', text: "This connects directly to your Initial Checklist assignment — one of the most important pieces of this course and your drone practice. Your checklists should be based, in part, on your own class experiences and observations: what went wrong, what needs improvement. It's a living document you keep refining over the course. The assignment emphasizes process over product and asks you to show the evolution in your thinking — ultimately building the habit of mind to create checklists for future work with drones." },
+  { label: 'Assignment', text: "Your Initial Checklist assignment: a pre-flight and a post-flight checklist, understandable to other members of your flight team, covering equipment, operations, and safety. Draw on our class discussions and first flights — what did we say about safety, regulations, order of operations? What mistakes did we make? Build it in a Google Doc so version history shows your progression, and share it with jon.caris@tufts.edu. There are plenty of checklists online and you'll borrow items from them, but developing your own provides ownership — it's not helpful to me or you to have a copy of a 3rd party checklist." },
+  { label: 'Checklist Inspiration', text: "I take inspiration from The Checklist Manifesto by Atul Gawande — highly recommend reading it if you haven't. Gawande is a surgeon, writer, and public health leader who currently serves as Assistant Administrator for Global Health at USAID; before that he practiced surgery at Brigham and Women's Hospital and taught at Harvard Medical School and the Harvard Chan School of Public Health. He opens the book by distinguishing errors of ignorance (we don't know enough) from errors of ineptitude (we don't make proper use of what we know) — and argues failure in the modern world is really about the second kind. As he puts it, science has filled in enough knowledge over the last several decades to make ineptitude as much our struggle as ignorance." },
+  { label: 'Why Checklists', text: "Three forces push toward checklists: complexity that outstrips any one person's capacity, the fallibility of memory under strain, and the constant tension between getting airborne and doing it safely." },
+  { label: 'Model 299', text: "Aviation checklists came into existence after the crash of the new Boeing Model 299 on its test flight in 1935. The Board of Officers convened at Wright Field to investigate found the crash wasn't due to structural failure or an engine, control surface, or autopilot malfunction — it was the locked condition of the rudder and elevator controls, which made the plane impossible to fly. Complexity, or rather ineptitude? The pilot was clearly well trained — he was Chief of the Flying Branch, Material Division, at Wright Field. It was simply \u201Ctoo much airplane for one person to fly.\u201D" },
+  { label: 'Cockpit Conversation', text: "This is what the response looked like in practice. Life Magazine, 1942: the copilot fishes a printed form out of a briefcase, and pilot and copilot run a call-and-response through every switch, valve, and control — gear switch, fuel-transfer valves, hydraulic pressure, gyros, cowl flaps, throttles, propellers, magnetos — before the Flying Fortress ever leaves the ground. Read a few lines aloud; the rhythm is exactly what a good checklist feels like." },
+  { label: 'Types of Checklists', text: "You have to decide whether you want a Do-Confirm checklist or a Read-Do checklist. With Do-Confirm, team members perform their jobs from memory and experience, often separately, then stop and run the checklist to confirm everything that was supposed to be done was done. With Read-Do, team members carry out tasks as they check them off — more like following a recipe. For any new checklist built from scratch, pick whichever type fits the situation. Beginners will likely start with Read-Do; as experience is gained, the procedure may evolve into more of a Do-Confirm." },
+  { label: 'Operational Considerations', text: "These considerations emphasize teamwork in your practice and use of checklists — recall my mentioning on day one that no one should fly alone. A non-flying team member starts the checklist because the pilot in command already has enough responsibility. Keep different checklists for different activities — mapping versus videography. Treat it as total team responsibility, and always land on a clear go/no-go." },
+  { label: 'Design Considerations', text: "On writing the checklist itself: time it, keep it to one page if possible, build in deliberate pause points of no more than 60 seconds, order steps logically, and respect the environment you're working in." },
+  { label: 'Final Thoughts', text: "Fallibility of human memory and attention is greatest under stress. Don't get into a situation of \u201Ctoo much drone for one person to fly.\u201D Checklists improve outcomes without increasing skill or knowledge." },
+  { label: 'References', text: "Be sure to check the resources on Canvas for examples of previous student checklists — alongside Gawande's book and the Wikipedia entry on preflight checklists." },
+];
+
+class Component extends DCLogic {
+  state = { notesOpen: false, slideIndex: 0 };
+
+  componentDidMount() {
+    this._onMsg = (e) => {
+      if (e.data && typeof e.data.slideIndexChanged === 'number') this.setState({ slideIndex: e.data.slideIndexChanged });
+    };
+    window.addEventListener('message', this._onMsg);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onMsg);
+  }
+
+  renderVals() {
+    return {
+      referencesFontSize: this.props.referencesFontSize ?? 34,
+      checklistTags: CHECKLIST_TAGS,
+      operationalItems: OPERATIONAL_ITEMS,
+      designItems: DESIGN_ITEMS,
+      notesOpen: this.state.notesOpen,
+      notesButtonLabel: this.state.notesOpen ? 'Hide Speaker Notes' : 'Speaker Notes',
+      notesSlideLabel: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).label,
+      notesText: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).text,
+      toggleNotes: () => this.setState(s => ({ notesOpen: !s.notesOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+</helmet>
+<div style="position:relative;width:100%;height:100%">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- TITLE -->
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="Welcome everyone. Today we're covering how to plan a drone mapping mission for the best possible data — overlap, resolution, shutter type, and GSD." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div style="display:flex;align-items:center;gap:16px"><img src="./assets/better-maps/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/better-maps/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+    <div>
+      <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">Tufts University Data Lab</div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:118px;line-height:0.98;letter-spacing:-0.02em;margin:0 0 30px">Better Maps</h1>
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.4;max-width:1150px;color:rgba(255,255,255,0.9);margin:0">Mission planning fundamentals for drone mapping — overlap, resolution, shutter type, and ground sample distance.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:24px;color:rgba(255,255,255,0.75)"><span>Drone Mapping</span><span>Tufts Drone Program</span></div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <section data-label="Section" data-screen-label="02" data-speaker-notes="Everything in mission planning comes back to one idea: the quality of your imagery determines the quality of your final map." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/better-maps/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">Mission Planning</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:100px;line-height:1.02;margin:0;max-width:1500px">Considerations for<br>Mission Planning</h2>
+    <div style="width:180px;height:8px;background:#3E8EDE;margin-top:44px;border-radius:4px"></div>
+  </section>
+
+  <!-- CONTENT: Image overlap fundamentals -->
+  <section data-label="Overlap Fundamentals" data-screen-label="03" data-speaker-notes="Image overlap is fundamental — acquisition of quality imagery determines the quality of the data output. Walk through the four practical considerations: camera resolution, shutter type, GSD, and overlap percentage." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Mission Planning</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;color:#002E6D;margin:0 0 18px;letter-spacing:-0.01em">Image overlap is fundamental</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.5;max-width:1300px;margin:0 0 44px">Acquisition of quality imagery determines the quality of the data output.</p>
+    <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:44px 56px;flex:1;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#002E6D;margin-bottom:24px">Practical considerations</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 56px">
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">Camera resolution &amp; image extent <span style="font-size:24px;color:#63493A">(larger sensor and image size = more light and more overlap)</span></div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">Type of camera shutter (exposure)</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">What the Ground Sample Distance (GSD) <b>should be or needs to be</b> <span style="font-size: 24px; color: rgb(99, 73, 58);"><b><i>— rule of thumb: 1/10 the smallest feature to resolve</i></b></span></div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4;grid-column:1/3">Percentage of image overlap, front and side <span style="font-size:24px;color:#63493A">— may vary depending on environment and other constraints and desired outputs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: Flight planning / overlap pattern -->
+  <section data-label="Flight Planning" data-screen-label="04" data-speaker-notes="Flight planning is a balance of required overlap and flight time. The best flight plan follows a lawn-mower pattern with 75-90% frontal overlap and 70-75% side overlap." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Mission Planning · Image Overlap</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 8px;letter-spacing:-0.01em">A balance of overlap and flight time</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4;margin:0 0 36px">Typically, the best flight plan follows a "lawn mower" pattern.</p>
+    <div style="display:grid;grid-template-columns:1.7fr 1fr;gap:48px;flex:1;min-height:0">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 12px 28px rgba(61,46,37,0.1);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px">
+        <img src="./assets/better-maps/img03.png" alt="Lawn-mower flight line pattern showing frontal and side image overlap over an area of interest" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px;justify-content:center">
+        <div style="background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;padding:32px">
+          <div style="display:flex;align-items:baseline;gap:12px"><span style="font-family:'Playfair Display',serif;font-weight:800;font-size:56px;color:#3E8EDE">75–90%</span></div>
+          <div style="font-weight:700;font-size:24px;color:#002E6D;margin-top:6px">Frontal overlap</div>
+        </div>
+        <div style="background:#fff;border-radius:16px;border-top:6px solid #1A5532;padding:32px">
+          <div style="display:flex;align-items:baseline;gap:12px"><span style="font-family:'Playfair Display',serif;font-weight:800;font-size:56px;color:#1A5532">70–75%</span></div>
+          <div style="font-weight:700;font-size:24px;color:#002E6D;margin-top:6px">Side overlap</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px;font-family:'Montserrat',sans-serif;font-size:24px;color:#63493A">Source: Pix4D</div>
+  </section>
+
+  <!-- CONTENT: Image resolution & extent -->
+  <section data-label="Resolution and Extent" data-screen-label="05" data-speaker-notes="Larger sensors capture a wider image footprint. Advantages: more light in lower-light conditions, fewer flight lines, more overlap and keypoints, and less air time — lowering operation costs." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Mission Planning · Image Resolution and Extent</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0 0 36px;letter-spacing:-0.01em">Larger sensors, wider footprint</h2>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;flex:1;min-height:0">
+      <div style="background:#F2EDE7;border-radius:20px;display:flex;align-items:center;justify-content:center;padding:40px">
+        <div style="position:relative;width:400px;height:400px">
+          <div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#fff;border:3px solid #002E6D;border-radius:4px"><div style="position: absolute; left: 9px; top: 377px; transform: translateY(-50%); font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 24px; color: #002E6D; white-space: nowrap">42 MP</div></div>
+          <div style="position:absolute;left:0;top:0;width:74%;height:74%;background:#fff;border:3px solid #3E8EDE;border-radius:4px"><div style="position: absolute; left: 8px; top: 281px; transform: translateY(-50%); font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 24px; color: #3E8EDE; white-space: nowrap">16 MP</div></div>
+          <div style="position:absolute;left:0;top:0;width:56%;height:56%;background:#fff;border:3px solid #1A5532;border-radius:4px"><div style="position: absolute; left: 9px; top: 205px; transform: translateY(-50%); font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 24px; color: #1A5532; white-space: nowrap">12 MP</div></div>
+          <div style="position:absolute;left:0;top:0;width:34%;height:34%;background:#fff;border:3px solid #B24E10;border-radius:4px"><div style="position: absolute; left: 14px; top: 113px; transform: translateY(-50%); font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 24px; color: #B24E10; white-space: nowrap">4K video</div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
+        <div style="font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#002E6D;margin-bottom:8px">Advantages of a larger sensor</div>
+        <ul style="margin:0;padding-left:26px;font-family:'Source Serif 4',serif;font-size:26px;line-height:1.6;display:flex;flex-direction:column;gap:10px">
+          <li>More light, better in lower-light conditions</li>
+          <li>Fewer flight lines needed</li>
+          <li>More overlap and more keypoints</li>
+          <li>Less air time and lower operation costs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON: Camera shutter -->
+  <section data-label="Camera Shutter" data-screen-label="06" data-speaker-notes="Global shutter captures the whole image in one instant, giving an exact camera position for each photo. Rolling shutter exposes the image over time, which can warp scene geometry and reduce reconstruction accuracy." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Mission Planning · Camera Shutter</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 40px;letter-spacing:-0.01em">Global vs. rolling shutter</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;flex:1;min-height:0">
+      <div style="background:#fff;border-radius:20px;border-top:8px solid #3E8EDE;padding:40px;display:flex;flex-direction:column;gap:22px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Global shutter</div>
+        <div style="align-self:center;width:220px;height:173px;overflow:hidden;position:relative;border:2px solid #3D2E25">
+          <img src="./assets/better-maps/img04.gif" alt="Global shutter grid capture, animated" style="position:absolute;left:-188.6px;top:-196.4px;width:1131.4px;height:697.7px;max-width:none">
+        </div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5">Captures the entire image in one instant — giving an exact camera position for every photo, ideal for accurate 3D reconstruction.</div>
+      </div>
+      <div style="background:#fff;border-radius:20px;border-top:8px solid #B24E10;padding:40px;display:flex;flex-direction:column;gap:22px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Rolling shutter</div>
+        <div style="align-self:center;width:220px;height:173px;overflow:hidden;position:relative;border:2px solid #3D2E25">
+          <img src="./assets/better-maps/img04.gif" alt="Rolling shutter grid capture, animated, showing the exposure band scanning down" style="position:absolute;left:-754.3px;top:-196.4px;width:1131.4px;height:697.7px;max-width:none">
+        </div>
+        <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5">Exposes the image in sections over time — no single exact camera position, which can warp objects in the scene and reduce accuracy.</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:28px;margin-top:28px;background:#fff;border:1px solid #E4DCD1;border-radius:16px;padding:20px 32px">
+      <div style="width:240px;height:160px;overflow:hidden;position:relative;border-radius:8px;border:1px solid #E4DCD1;flex-shrink:0">
+        <img src="./assets/better-maps/img04.gif" alt="Animated propeller blade warping under rolling-shutter exposure" style="position:absolute;left:-452.8px;top:-496px;width:1152px;height:710.4px;max-width:none">
+      </div>
+      <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5;color:#3D2E25">Rolling shutter can visibly warp fast-moving subjects, like this propeller blade, as different rows expose at different times. Pix4D and other applications offer rolling-shutter corrections; alternatively, program the flight to stop and hover at each capture. Credit: Carlson Software.</div>
+    </div>
+  </section>
+
+  <!-- CONTENT: GSD definition, pixel-to-pixel -->
+  <section data-label="GSD Definition" data-screen-label="07" data-speaker-notes="Before the formula: GSD is simply the real-world distance between the centers of two adjacent pixels. Point at the diagram — each square is one pixel, and GSD is the ground distance from the center of one to the center of its neighbor." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Mission Planning · Ground Sample Distance (GSD)</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0 0 36px;letter-spacing:-0.01em">Pixel center to pixel center</h2>
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;flex:1;min-height:0">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 12px 28px rgba(61,46,37,0.1);display:flex;align-items:center;justify-content:center;padding:40px">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);width:420px;height:420px;position:relative">
+          <sc-for list="{{ pixelCells }}" as="cell" hint-placeholder-count="16"><div style="border:2px solid #3D2E25"></div></sc-for>
+          <div style="position:absolute;left:12.5%;top:37.5%;width:25%;height:25%;background:rgba(62,142,222,0.18)"></div>
+          <div style="position:absolute;left:37.5%;top:37.5%;width:25%;height:25%;background:rgba(178,78,16,0.18)"></div>
+          <div style="position:absolute;left:25%;top:50%;width:16px;height:16px;border-radius:50%;background:#3E8EDE;transform:translate(-50%,-50%)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:16px;height:16px;border-radius:50%;background:#B24E10;transform:translate(-50%,-50%)"></div>
+          <div style="position:absolute;left:25%;right:50%;top:50%;height:3px;background:#002E6D;transform-origin:left center"></div>
+          <div style="position:absolute;left:25%;width:25%;top:calc(50% - 34px);text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#002E6D">GSD</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;justify-content:center">
+        <div style="background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;padding:32px">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:10px">Each square is one pixel</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.5">GSD is the real-world ground distance between the centers of two adjacent pixels — not the pixel's size on screen, but what it represents on the ground.</div>
+        </div>
+        <div style="background:#fff;border-radius:16px;border-top:6px solid #1A5532;padding:32px">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:10px">i.e. — spatial resolution / pixel size</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.5">A smaller GSD means each pixel covers less ground, so the image shows finer detail.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT: GSD formula (big stat style) -->
+  <section data-label="GSD Formula" data-screen-label="08" data-speaker-notes="Ground Sample Distance is the real-world distance between two adjacent pixel centers — essentially spatial resolution. It's calculated from flight height, sensor size, focal length, and image size.  We will go through a calculation in class.  Get out those calculators!" style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Mission Planning · Ground Sample Distance (GSD)</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:56px;color:#002E6D;margin:0 0 12px;letter-spacing:-0.01em">The distance between two pixel centers</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4;max-width:1300px;margin:0 0 32px">GSD is the real-world distance between two adjacent pixel centers — in other words, spatial resolution, or pixel size.</p>
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:48px;flex:1;min-height:0">
+      <div style="background:#F2EDE7;border-radius:20px;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden">
+        <img src="./assets/better-maps/img05.png" alt="Diagram showing sensor height and width, focal length, and flight height above the ground" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;justify-content:center">
+        <div style="background:#002E6D;border-radius:20px;padding:36px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#fff;letter-spacing:0.01em">GSD = (Flight Height × Sensor Size) ÷ (Focal Length × Image Size)</div>
+        </div>
+        <div style="background:#F2EDE7;border-radius:16px;padding:28px;overflow:hidden">
+          <img src="./assets/better-maps/img06.png" alt="Aerial photo of parking lot at 2.5cm GSD versus the same scene at 25cm GSD, showing loss of detail" style="width:100%;height:auto;display:block;border-radius:10px">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON: GSD tradeoffs -->
+  <section data-label="GSD Tradeoffs" data-screen-label="09" data-speaker-notes="Smaller GSD means more detail but a lower flying height, longer flight time, larger datasets, and longer processing time. Larger GSD trades detail for speed and smaller data. GSD is also a rough indicator of accuracy." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:80px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Mission Planning · GSD &amp; Tradeoffs</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 40px;letter-spacing:-0.01em">Smaller GSD vs. larger GSD</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;flex:1;min-height:0">
+      <div style="background:#fff;border-radius:20px;border-top:8px solid #3E8EDE;padding:40px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Smaller GSD</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.9">More detail<br>→ Lower flying height<br>→ Longer flight time<br>→ Larger datasets<br>→ Longer processing times</div>
+      </div>
+      <div style="background:#fff;border-radius:20px;border-top:8px solid #B24E10;padding:40px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-weight:700;font-size:28px;color:#002E6D">Larger GSD</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.9">Less detail<br>→ Higher flying altitude<br>→ Shorter flight time<br>→ Smaller datasets<br>→ Moderate processing times</div>
+      </div>
+    </div>
+    <div style="margin-top:24px;font-family:'Source Serif 4',serif;font-size:24px;line-height:1.4">GSD can give us some indication of accuracy.</div>
+  </section>
+
+  <!-- QUOTE / CLOSING: summary + references -->
+  <section data-label="Summary &amp; References" data-screen-label="10" data-speaker-notes="To summarize: image overlap is fundamental and can be adjusted as needed. Always weigh sensor resolution, shutter type, and required GSD. " style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box;position:relative">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:20px">Summary</div>
+    <p style="font-family:'Playfair Display',serif;font-weight:700;font-size:44px;line-height:1.3;max-width:1500px;margin:0 0 40px">Image overlap is fundamental — and it can be controlled and adjusted as needed.</p>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;max-width:1500px;margin-bottom:48px">
+      <li style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">Sensor resolution or size</li>
+      <li style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">Camera shutter</li>
+      <li style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">What GSD is necessary</li>
+    </ul>
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:14px;font-size:24px">References</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5;color:rgba(255,255,255,0.85)">Pix4D · Accuracy in Aerial Mapping, pix4d.com/blog/accuracy-aerial-mapping</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.5;color:rgba(255,255,255,0.85)">DJI Enterprise Insights · Mechanical Shutter for Drones, enterprise-insights.dji.com/blog/mechanical-shutter-drones</div>
+    <div style="margin-top:40px;font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;font-weight:600;letter-spacing:0.06em">TUFTS DRONE PROGRAM · TUFTS UNIVERSITY DATA LAB</div>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+
+<button sc-camel-on-click="{{ toggleNotes }}" style="position:absolute;right:24px;bottom:24px;z-index:50;background:#002E6D;color:#fff;border:none;border-radius:100px;padding:12px 22px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.03em;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.25)">{{ notesButtonLabel }}</button>
+<sc-if value="{{ notesOpen }}">
+  <div style="position:absolute;left:24px;right:24px;bottom:80px;z-index:50;background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;box-shadow:0 16px 36px rgba(0,0,0,0.3);padding:24px 28px;max-height:220px;overflow:auto">
+    <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE;margin-bottom:8px">Speaker Notes · {{ notesSlideLabel }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:20px;line-height:1.5;color:#3D2E25">{{ notesText }}</div>
+  </div>
+</sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SLIDE_NOTES = [
+  { label: 'Title', text: "Welcome everyone. Today we're covering how to plan a drone mapping mission for the best possible data — overlap, resolution, shutter type, and GSD." },
+  { label: 'Section', text: "Everything in mission planning comes back to one idea: the quality of your imagery determines the quality of your final map." },
+  { label: 'Overlap Fundamentals', text: "Image overlap is fundamental — acquisition of quality imagery determines the quality of the data output. Walk through the four practical considerations: camera resolution, shutter type, GSD, and overlap percentage." },
+  { label: 'Flight Planning', text: "Flight planning is a balance of required overlap and flight time. The best flight plan follows a lawn-mower pattern with 75-90% frontal overlap and 70-75% side overlap." },
+  { label: 'Resolution and Extent', text: "Larger sensors capture a wider image footprint. Advantages: more light in lower-light conditions, fewer flight lines, more overlap and keypoints, and less air time — lowering operation costs." },
+  { label: 'Camera Shutter', text: "Global shutter captures the whole image in one instant, giving an exact camera position for each photo. Rolling shutter exposes the image over time, which can warp scene geometry and reduce reconstruction accuracy." },
+  { label: 'GSD Definition', text: "Before the formula: GSD is simply the real-world distance between the centers of two adjacent pixels. Point at the diagram — each square is one pixel, and GSD is the ground distance from the center of one to the center of its neighbor." },
+  { label: 'GSD Formula', text: "Ground Sample Distance is the real-world distance between two adjacent pixel centers — essentially spatial resolution. It's calculated from flight height, sensor size, focal length, and image size." },
+  { label: 'GSD Tradeoffs', text: "Smaller GSD means more detail but a lower flying height, longer flight time, larger datasets, and longer processing time. Larger GSD trades detail for speed and smaller data. GSD is also a rough indicator of accuracy." },
+  { label: 'Summary & References', text: "To summarize: image overlap is fundamental and can be adjusted as needed. Always weigh sensor resolution, shutter type, and required GSD." },
+];
+
+class Component extends DCLogic {
+  state = { notesOpen: false, slideIndex: 0 };
+
+  componentDidMount() {
+    this._onMsg = (e) => {
+      if (e.data && typeof e.data.slideIndexChanged === 'number') this.setState({ slideIndex: e.data.slideIndexChanged });
+    };
+    window.addEventListener('message', this._onMsg);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onMsg);
+  }
+
+  renderVals() {
+    return {
+      shutterCells: Array.from({ length: 36 }, (_, i) => i),
+      pixelCells: Array.from({ length: 16 }, (_, i) => i),
+      notesOpen: this.state.notesOpen,
+      notesButtonLabel: this.state.notesOpen ? 'Hide Speaker Notes' : 'Speaker Notes',
+      notesSlideLabel: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).label,
+      notesText: (SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0]).text,
+      toggleNotes: () => this.setState(s => ({ notesOpen: !s.notesOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

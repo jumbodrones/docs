@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+.eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.16em;text-transform:uppercase}
+.wm-sub{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.2em;text-transform:uppercase}
+.role-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#3E8EDE;color:#fff;font-weight:800;font-size:20px;flex-shrink:0}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="Welcome — introduce the Field Crew guide and why crew roles matter for safe flight." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div style="display:flex;align-items:center;gap:16px"><img src="./assets/crew/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/crew/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+    <div>
+      <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">Tufts University Data Lab</div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:118px;line-height:0.98;letter-spacing:-0.02em;margin:0 0 30px">Field Crew:<br>Making It Work</h1>
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.4;max-width:1150px;color:rgba(255,255,255,0.9);margin:0">The people, roles, and responsibilities that keep every drone flight safe.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:22px;color:rgba(255,255,255,0.75)"><span>Spring 2026</span><span>Presented by the Program leads</span></div>
+  </section>
+
+  <section data-label="Section: Flight Crew" data-screen-label="02" data-speaker-notes="Transition into the four flight-crew roles." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/crew/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">Part 01</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:104px;line-height:1.02;margin:0;max-width:1400px">The Flight Crew</h2>
+    <div style="width:180px;height:8px;background:#3E8EDE;margin-top:44px;border-radius:4px"></div>
+  </section>
+
+  <section data-label="RPIC" data-screen-label="03" data-speaker-notes="The RPIC carries ultimate responsibility — every flight decision runs through them." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Flight Crew</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:72px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Remote Pilot in Command (RPIC)</h2>
+    <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:70px;flex:1">
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px">
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">1</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Ultimate responsibility</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Holds ultimate responsibility for the safe operation of the drone.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">2</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Final decision</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Makes the final call to <strong>initiate</strong> or <strong>terminate</strong> any flight.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">3</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Pre-flight evaluation</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Evaluates all drone activity before operation begins.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">4</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Documentation</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Ensures all required documentation is completed.</div></div></li>
+      </ul>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:44px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-weight:700;font-size:22px;letter-spacing:0.1em;text-transform:uppercase;color:#B24E10;margin-bottom:16px">Note</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.4;color:#3D2E25">If the RPIC hasn't signed off, the flight doesn't happen.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Operator" data-screen-label="04" data-speaker-notes="The Operator flies the aircraft but always in verbal contact with the RPIC." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Flight Crew</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:72px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Operator</h2>
+    <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:70px;flex:1">
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px">
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">1</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Designated by the RPIC</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Controls the drone — commonly called "on the sticks."</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">2</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Visual line of sight</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Maintains Visual Line of Sight (VLOS) with the drone at all times.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">3</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Verbal contact</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Maintains verbal contact with the RPIC at all times.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">4</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Procedures</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Understands normal, abnormal, and emergency procedures.</div></div></li>
+      </ul>
+      <div style="background:#fff;border-radius:20px;border-top:8px solid #3E8EDE;padding:44px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 12px 28px rgba(61,46,37,0.10)">
+        <div style="font-weight:700;font-size:22px;letter-spacing:0.1em;text-transform:uppercase;color:#B24E10;margin-bottom:16px">Note</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.4;color:#3D2E25">The RPIC is often also the Operator — but not in all cases.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Visual Observer" data-screen-label="05" data-speaker-notes="The VO helps the RPIC and Operator see and avoid hazards the pilot can't, but is not a substitute for &quot;See and Avoid&quot;." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Flight Crew</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:72px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Visual Observer (VO)</h2>
+    <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:70px;flex:1">
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px">
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">1</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Designated by the RPIC</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Assists in flight control to see and avoid hazards aloft or on the ground.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">2</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Situational awareness</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Helps maintain awareness through "see-and-avoid."</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">3</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Verbal contact</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Maintains verbal contact with the RPIC at all times.*</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">4</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Procedures</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Understands normal, abnormal, and emergency procedures.</div></div></li>
+      </ul>
+      <div style="background:#F2EDE7;border-radius:20px;border-top:8px solid #3E8EDE;padding:44px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-weight:700;font-size:22px;letter-spacing:0.1em;text-transform:uppercase;color:#B24E10;margin-bottom:16px">Note</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.4;color:#3D2E25">*Cell phones are acceptable, with connection confirmed before takeoff and maintained throughout the flight.&nbsp; However, "daisy-chaining" with cell phones does not satisfy "see and avoid"</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Camera / Payload Operator" data-screen-label="06" data-speaker-notes="The camera operator watches telemetry and payload but never directs the aircraft." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Flight Crew</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:66px;color:#002E6D;margin:0 0 48px;letter-spacing:-0.01em">Camera or Payload Operator</h2>
+    <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:70px;flex:1">
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px">
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">1</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Telemetry updates</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Updates the RPIC with critical telemetry information.*</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">2</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Camera systems</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Responsible for remotely controlling on-board camera systems.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">3</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">Payload knowledge</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Knowledgeable in operating procedures for specific payloads.</div></div></li>
+        <li style="display:flex;gap:22px;align-items:flex-start"><span class="role-num">4</span><div><div style="font-weight:700;font-size:28px;color:#002E6D">No maneuver authority</div><div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45;color:#3D2E25">Has no authority to maneuver the aircraft in any unsafe manner.</div></div></li>
+      </ul>
+      <div style="background:#fff;border-radius:20px;border-top:8px solid #3E8EDE;padding:44px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 12px 28px rgba(61,46,37,0.10)">
+        <div style="font-weight:700;font-size:22px;letter-spacing:0.1em;text-transform:uppercase;color:#B24E10;margin-bottom:16px">Note</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.4;color:#3D2E25">*Battery percentage, communication signal strength, and any warnings or alerts.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="References" data-screen-label="07" data-speaker-notes="Point the crew to the source regulations and manuals behind this guide." style="position:relative;width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:96px 130px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:22px">References &amp; Further Reading</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:76px;color:#fff;margin:0 0 56px;letter-spacing:-0.01em">Where this guide comes from</h2>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:32px;max-width:1550px">
+      <li style="display:flex;gap:24px;align-items:flex-start"><span class="role-num" style="background:#3E8EDE">1</span><div><div style="font-weight:700;font-size:28px">FAA Part 107 — Small Unmanned Aircraft Systems</div><div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.4;color:rgba(255,255,255,0.85)">Federal rules governing RPIC authority, VLOS, and crew responsibilities. faa.gov/uas</div></div></li>
+      <li style="display:flex;gap:24px;align-items:flex-start"><span class="role-num" style="background:#3E8EDE">2</span><div><div style="font-weight:700;font-size:28px">Tufts Drone Program Safety Handbook</div><div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.4;color:rgba(255,255,255,0.85)">Internal crew roles, pre-flight checklists, and field procedures. Available via Tufts Box.</div></div></li>
+      <li style="display:flex;gap:24px;align-items:flex-start"><span class="role-num" style="background:#3E8EDE">3</span><div><div style="font-weight:700;font-size:28px">Tufts University Data Lab</div><div style="font-family:'Source Serif 4',serif;font-size:24px;line-height:1.4;color:rgba(255,255,255,0.85)">Program home, tutorials, and contact for questions. sites.tufts.edu/datalab</div></div></li>
+    </ul>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+<div id="notes-toggle" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Montserrat',sans-serif">
+  <button sc-camel-on-click="{{ toggleNotes }}" style="background:#002E6D;color:#fff;border:none;border-radius:999px;padding:12px 22px;font-weight:700;font-size:15px;letter-spacing:0.04em;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.25)">{{ notesButtonLabel }}</button>
+  <sc-if value="{{ notesOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;bottom:76px;right:24px;width:420px;max-height:320px;overflow-y:auto;background:#fff;color:#3D2E25;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,0.3);padding:24px;border-top:6px solid #3E8EDE">
+      <div style="font-weight:700;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#3E8EDE;margin-bottom:10px">Speaker Notes — Slide {{ noteSlideNum }}</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:18px;line-height:1.5">{{ currentNote }}</div>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { notesOpen: false, index: 0, notes: [] };
+
+  componentDidMount() {
+    this._refreshNotes = () => {
+      const slides = document.querySelectorAll('[data-speaker-notes]');
+      if (slides.length) this.setState({ notes: Array.from(slides).map(s => s.getAttribute('data-speaker-notes') || '') });
+    };
+    this._onMsg = (e) => {
+      if (e && e.data && typeof e.data.slideIndexChanged === 'number') {
+        this.setState({ index: e.data.slideIndexChanged });
+        this._refreshNotes();
+      }
+    };
+    window.addEventListener('message', this._onMsg);
+    this._refreshNotes();
+    this._retryTimer = setInterval(() => {
+      if (this.state.notes.length) { clearInterval(this._retryTimer); return; }
+      this._refreshNotes();
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onMsg);
+    clearInterval(this._retryTimer);
+  }
+
+  renderVals() {
+    const note = this.state.notes[this.state.index] || 'No notes for this slide.';
+    return {
+      notesOpen: this.state.notesOpen,
+      notesButtonLabel: this.state.notesOpen ? 'Hide Notes' : 'Speaker Notes',
+      noteSlideNum: this.state.index + 1,
+      currentNote: note,
+      toggleNotes: () => { this._refreshNotes(); this.setState(s => ({ notesOpen: !s.notesOpen })); }
+    };
+  }
+}
+</script>
+</body>
+</html>
