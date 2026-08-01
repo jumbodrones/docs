@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+.eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.14em;text-transform:uppercase}
+.wm-sub{font-family:'Montserrat',sans-serif;font-weight:600;font-size:24px;letter-spacing:0.1em;text-transform:uppercase}
+a{color:#002E6D}
+a:hover{color:#3E8EDE}</style>
+</helmet>
+<div style="position:relative;width:100%;height:100%">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- 01 TITLE -->
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="Airspace restrictions and authorizations exist to promote the safe integration of unmanned aircraft into controlled airspace. As remote pilot in command, you are responsible for reviewing everything needed to plan a flight in compliance with the regulations and altitude restrictions." style="width:1920px;height:1080px;background:linear-gradient(150deg,#002E6D 0%,#013e8f 60%,#3E8EDE 140%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif;position:relative;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:16px;position:relative"><img src="./assets/airspace/img01.png" alt="Jumbo" style="height:56px;width:auto"><img src="./assets/airspace/img02.png" alt="Tufts University" style="height:36px;width:auto"><span class="wm-sub" style="color:#98D5C7;border-left:1px solid rgba(255,255,255,0.4);padding-left:16px">Drone Program</span></div>
+    <div style="position:relative">
+      <div class="eyebrow" style="color:#98D5C7;margin-bottom:26px">Tufts University Data Lab</div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:112px;line-height:0.98;letter-spacing:-0.02em;margin:0 0 30px">Airspace for Drones</h1>
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.4;max-width:1100px;color:rgba(255,255,255,0.9);margin:0">Fly safely &amp; legally — knowing the airspace you are in before take off.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:24px;color:rgba(255,255,255,0.75);position:relative"><span>Regulations &amp; Authorization</span><span>Tufts Drone Program</span></div>
+  </section>
+  <!-- 02 SECTION -->
+  <section data-label="Section: Airspace" data-screen-label="02" data-speaker-notes="Everything in this session comes back to one question you must answer before every flight: what class of airspace am I in, and does it require authorization?" style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 130px;box-sizing:border-box;position:relative">
+    <div style="position:absolute;top:60px;left:130px;display:flex;align-items:center;gap:14px"><img src="./assets/airspace/img02.png" alt="Tufts University" style="height:34px;width:auto"><span class="wm-sub" style="color:#FFC72C;border-left:1px solid rgba(255,255,255,0.4);padding-left:14px">Drone Program</span></div>
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:22px">Airspace</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:88px;line-height:1.05;margin:0 0 48px;max-width:1500px">Six classes, one question</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:34px;line-height:1.45;max-width:1350px;margin:0;color:rgba(255,255,255,0.92)">Controlled or uncontrolled — and if controlled, how to get authorization?</p>
+  </section>
+  <!-- 03 CLASS TABLE -->
+  <section data-label="Airspace Classes" data-screen-label="03" data-speaker-notes="Class A is off limits entirely. B, C, and D are controlled airspace centered over airports of decreasing size — busiest, medium, then small city and rural with a four nautical mile radius. Class E sits near non-towered airports and everywhere else that is controlled but not A through D. Class G is everything left over. Authorization difficulty rises as you move up the table." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:78px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Airspace</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 34px;letter-spacing:-0.01em">Classification at a glance</h2>
+    <div style="display:flex;gap:34px;flex:1;min-height:0">
+      <div style="width:96px;display:flex;flex-direction:column;justify-content:space-between;padding:8px 0">
+        <div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:24px;letter-spacing:0.14em;color:#B3261E">Regulated</div>
+        <div style="flex:1;width:8px;margin:20px auto;border-radius:4px;background:linear-gradient(#B3261E,#EDA51F,#F5D96B,#1A5532)"></div>
+        <div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:24px;letter-spacing:0.14em;color:#1A5532">Open</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:14px;min-height:0">
+        <div style="display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center;background:#F2EDE7;border-radius:14px;padding:20px 28px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#fff;background:#B3261E">A</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.35">From 18,000’ MSL up — drones prohibited.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;color:#B3261E">Prohibited</div>
+        </div>
+        <div style="display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center;background:#F2EDE7;border-radius:14px;padding:20px 28px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#fff;background:#D2521C">B</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.35">Centered over the nation’s busiest airports.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;color:#D2521C">Authorization required</div>
+        </div>
+        <div style="display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center;background:#F2EDE7;border-radius:14px;padding:20px 28px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#fff;background:#E07B18">C</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.35">Centered over medium-sized airports.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;color:#C06A12">Authorization required</div>
+        </div>
+        <div style="display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center;background:#F2EDE7;border-radius:14px;padding:20px 28px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#fff;background:#EDA51F">D</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.35">Centered over small city / rural airports, 4&nbsp;NM radius.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;color:#A87515">Authorization required</div>
+        </div>
+        <div style="display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center;background:#F2EDE7;border-radius:14px;padding:20px 28px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#3D2E25;background:#F5D96B">E</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.35">Near non-towered airports; controlled but not A, B, C or D.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;color:#8A6410">Required at the surface (E2)</div>
+        </div>
+        <div style="display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center;background:#F2EDE7;border-radius:14px;padding:20px 28px;flex:1">
+          <div style="display:flex;align-items:center;justify-content:center;width:88px;height:88px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:46px;color:#fff;background:#1A5532">G</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.35">All other airspace not classified as controlled.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;color:#1A5532">No approval needed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 04 PROFILE DIAGRAM -->
+  <section data-label="Airspace Profile" data-screen-label="04" data-speaker-notes="This is the classic profile view from the FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 14. Note it is not to scale. Class A caps everything at 18,000 feet MSL. The upside-down wedding cakes are B and C; D is a simple cylinder; and Class G fills the gaps below." style="width:1920px;height:1080px;background:#E6E6E6;color:#3D2E25;display:flex;flex-direction:column;padding:78px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Airspace</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 30px;letter-spacing:-0.01em">Airspace classification, in profile</h2>
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:36px;flex:1;min-height:0">
+      <div style="background:#fff;border-radius:20px;border:1px solid #DDD3C8;box-shadow:0 12px 28px rgba(61,46,37,0.10);padding:14px;display:flex;flex-direction:column;min-height:0">
+        <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
+        <div style="position:relative;width:100%;max-height:100%">
+          <img src="./assets/airspace/img03.jpg" alt="US Airspace Classes diagram (Pilot Institute) showing Class A from 18,000 to FL600, Class B, C and D towers over airports, Class E surrounding, and Class G at the surface" style="display:block;width:100%;height:auto;max-height:100%">
+          <button sc-camel-on-click="{{ selectA }}" aria-label="Class A" style="position:absolute;left:50%;top:21%;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;background:#B3261E;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,0.35)" style-hover="transform:translate(-50%,-50%) scale(1.12)">A
+            <span style="position:absolute;left:-9px;top:-9px;right:-9px;bottom:-9px;border-radius:50%;border:4px solid #FFC72C;pointer-events:none;opacity:{{ ringA }}"></span>
+          </button>
+          <button sc-camel-on-click="{{ selectB }}" aria-label="Class B" style="position:absolute;left:15.5%;top:49%;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;background:#1B4FD8;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,0.35)" style-hover="transform:translate(-50%,-50%) scale(1.12)">B
+            <span style="position:absolute;left:-9px;top:-9px;right:-9px;bottom:-9px;border-radius:50%;border:4px solid #002E6D;pointer-events:none;opacity:{{ ringB }}"></span>
+          </button>
+          <button sc-camel-on-click="{{ selectC }}" aria-label="Class C" style="position:absolute;left:39%;top:58%;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;background:#8C2350;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,0.35)" style-hover="transform:translate(-50%,-50%) scale(1.12)">C
+            <span style="position:absolute;left:-9px;top:-9px;right:-9px;bottom:-9px;border-radius:50%;border:4px solid #002E6D;pointer-events:none;opacity:{{ ringC }}"></span>
+          </button>
+          <button sc-camel-on-click="{{ selectD }}" aria-label="Class D" style="position:absolute;left:59.3%;top:65%;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;background:#4E86C9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,0.35)" style-hover="transform:translate(-50%,-50%) scale(1.12)">D
+            <span style="position:absolute;left:-9px;top:-9px;right:-9px;bottom:-9px;border-radius:50%;border:4px solid #002E6D;pointer-events:none;opacity:{{ ringD }}"></span>
+          </button>
+          <button sc-camel-on-click="{{ selectE }}" aria-label="Class E" style="position:absolute;left:92%;top:36%;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;background:#B0517A;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,0.35)" style-hover="transform:translate(-50%,-50%) scale(1.12)">E
+            <span style="position:absolute;left:-9px;top:-9px;right:-9px;bottom:-9px;border-radius:50%;border:4px solid #002E6D;pointer-events:none;opacity:{{ ringE }}"></span>
+          </button>
+          <button sc-camel-on-click="{{ selectG }}" aria-label="Class G" style="position:absolute;left:48.5%;top:72%;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:50%;background:#D9D3C8;color:#3D2E25;font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,0.35)" style-hover="transform:translate(-50%,-50%) scale(1.12)">G
+            <span style="position:absolute;left:-9px;top:-9px;right:-9px;bottom:-9px;border-radius:50%;border:4px solid #002E6D;pointer-events:none;opacity:{{ ringG }}"></span>
+          </button>
+        </div>
+        </div>
+        <div style="margin-top:14px;font-family:'Montserrat',sans-serif;font-size:24px;color:#63493A;padding:0 6px">Source: FAA <em>Pilot’s Handbook of Aeronautical Knowledge</em>, Ch.&nbsp;14 · not to scale · <strong style="color:#002E6D">click a class</strong></div>
+      </div>
+      <div style="background:#fff;border-radius:20px;border:1px solid #DDD3C8;box-shadow:0 12px 28px rgba(61,46,37,0.10);padding:36px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;align-items:center;gap:20px">
+          <div style="display:flex;align-items:center;justify-content:center;width:84px;height:84px;border-radius:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:{{ activeInk }};background:{{ activeColor }}">{{ activeClass }}</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:34px;color:#002E6D;line-height:1.1">{{ activeTitle }}</div>
+        </div>
+        <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.45;color:#3D2E25">{{ activeBody }}</div>
+        <div style="margin-top:auto;background:#F2EDE7;border-radius:14px;border-left:6px solid {{ activeColor }};padding:22px 24px">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#63493A;margin-bottom:8px">Drone authorization</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:27px;color:#002E6D;line-height:1.3">{{ activeAuth }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 3D VIEW -->
+  <section data-label="Airspace in 3D" data-screen-label="05" data-speaker-notes="Charts are flat; airspace is a volume. Draped over terrain in Google Earth you can see the Worcester Class C shelves stack outward and upward — the same shape as the wedding-cake diagram, but over real ground you might be flying." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:10px">Airspace</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;margin:0 0 26px;letter-spacing:-0.01em">Flat on the chart, a volume in the air</h2>
+    <div style="position:relative;flex:1;min-height:0;border-radius:18px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,0.4)">
+      <img src="./assets/airspace/img04.png" alt="Google Earth view of a sectional chart draped over terrain near Worcester, showing Class C airspace shelves in three dimensions" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+    <div style="margin-top:22px;font-family:'Source Serif 4',serif;font-size:26px;color:rgba(255,255,255,0.85);max-width:1400px">Worcester Regional (ORH) Class C, extruded over the Google Earth terrain — the shelves you see on the chart are ceilings and floors you fly under.</div>
+  </section>
+  <!-- 05 SECTIONAL CHART -->
+  <section data-label="Aeronautical Charts" data-screen-label="06" data-speaker-notes="Aeronautical charts are how airspace is actually published. Solid blue bands are Class B, magenta is Class C, dashed blue is Class D with a boxed ceiling in hundreds of feet, and the magenta shading marks where Class E begins. Only controlled and reserved airspace effective below 18,000 feet MSL appears on a sectional, and all times are local. Pull up SkyVector and find our field together." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Airspace</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 24px;letter-spacing:-0.01em">Aeronautical charts: airspace &amp; airports</h2>
+    <div style="display:grid;grid-template-columns:1fr 520px;gap:32px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12);background:#000">
+        <img src="./assets/airspace/img05.jpg" alt="VFR sectional chart of central Massachusetts showing Boston Class B rings, Worcester Class C, and Class E areas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;inset:0;background:#002E6D;pointer-events:none;opacity:{{ dimChart }}"></div>
+        <svg sc-camel-view-box="0 0 100 100" sc-camel-preserve-aspect-ratio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;opacity:{{ hlB }}">
+          <polyline points="73.3,0.9 71.4,8.1 69.5,16.9 69,24.4 69.3,29.4 70.5,33.1 72,37.5 73,43.8 73.7,49.4 74.3,54.4 75.1,59.4 76.4,64.4 78.1,69.4 80.2,74.4 82.7,78.8 85.6,81.9 89,84.1 93.2,85.4 97.8,85.6" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.85" vector-effect="non-scaling-stroke"></polyline>
+          <polyline points="73.3,0.9 71.4,8.1 69.5,16.9 69,24.4 69.3,29.4 70.5,33.1 72,37.5 73,43.8 73.7,49.4 74.3,54.4 75.1,59.4 76.4,64.4 78.1,69.4 80.2,74.4 82.7,78.8 85.6,81.9 89,84.1 93.2,85.4 97.8,85.6" fill="none" stroke="#1B4FD8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
+        </svg>
+        <div style="position:absolute;left:23.5%;top:32%;width:14.3%;height:25%;border:6px dashed #1B4FD8;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ hlD }}"></div>
+        <div style="position:absolute;left:16%;top:22.5%;width:29%;height:42.5%;border:6px solid #B0517A;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ hlE7 }}"></div>
+        <div style="position:absolute;left:0%;top:52%;width:32.5%;height:46%;border:6px solid #B0517A;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ hlE7 }}"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;min-height:0">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#63493A">Chart legend — click to locate</div>
+        <button sc-camel-on-click="{{ pickB }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:12px;border-radius:2px;background:#1B4FD8;flex:none"></span>
+          <span style="font-weight:600;font-size:25px;color:#002E6D;flex:1">Class B airspace</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ hlB }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickC }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:12px;border-radius:2px;background:#8C2350;flex:none"></span>
+          <span style="font-weight:600;font-size:25px;color:#002E6D;flex:1">Class C airspace</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ hlC }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickD }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:0;border-top:12px dashed #1B4FD8;flex:none"></span>
+          <span style="font-weight:600;font-size:25px;color:#002E6D;flex:1">Class D airspace</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ hlD }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickEs }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:0;border-top:12px dashed #8C2350;flex:none"></span>
+          <span style="font-weight:600;font-size:25px;color:#002E6D;flex:1">Class E (sfc) — E2</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ hlEs }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickE7 }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:16px;border-radius:2px;background:linear-gradient(90deg,#B0517A,rgba(176,81,122,0.15));flex:none"></span>
+          <span style="font-weight:600;font-size:25px;color:#002E6D;flex:1">Class E floor at 700’</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ hlE7 }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickE12 }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:16px;border-radius:2px;background:linear-gradient(90deg,#4E86C9,rgba(78,134,201,0.15));flex:none"></span>
+          <span style="font-weight:600;font-size:25px;color:#002E6D;flex:1">Class E floor at 1,200’</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ hlE12 }}"></span>
+        </button>
+        <div style="margin-top:auto;background:#002E6D;color:#fff;border-radius:14px;padding:24px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">{{ chartDesc }}</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:12px;font-weight:600">Below 18,000’ MSL only · all times local · skyvector.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 06 CLASS C BURLINGTON -->
+  <section data-label="Class C on Charts" data-screen-label="07" data-speaker-notes="Burlington International is the Class C example. Two solid magenta rings: a 5 NM core from the surface up, and a 10 NM shelf whose floor sits above the ground. The fraction is ceiling over floor in hundreds of feet — 44 over SFC in the core, 44 over 15 or 44 over 22 out on the shelf. Any drone work inside either ring needs authorization, and the boxed frequency is who you would be talking to." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#8C2350;margin-bottom:10px">Airspace: Class C</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 24px;letter-spacing:-0.01em">Reading Class C: Burlington (BTV)</h2>
+    <div style="display:grid;grid-template-columns:1fr 520px;gap:32px;flex:1;min-height:0">
+      <div style="position:relative;aspect-ratio:1.9;width:100%;max-height:100%;align-self:center;justify-self:center;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12);background:#000">
+        <img src="./assets/airspace/img06.jpg" alt="Sectional chart excerpt of Burlington International showing the Class C core and shelf rings" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block">
+        <div style="position:absolute;inset:0;background:#002E6D;pointer-events:none;opacity:{{ cbDim }}"></div>
+        <div style="position:absolute;left:27.3%;top:27.4%;width:30.6%;height:57.9%;border:6px solid #B0517A;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbOuter }}"></div>
+        <div style="position:absolute;left:35.4%;top:39.5%;width:15.3%;height:29%;border:6px solid #B0517A;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbInner }}"></div>
+        <div style="position:absolute;left:40.5%;top:44%;width:6%;height:8%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbSfc }}"></div>
+        <div style="position:absolute;left:36.5%;top:35.5%;width:5.5%;height:8.5%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbShelf }}"></div>
+        <div style="position:absolute;left:52%;top:38%;width:5.5%;height:8.5%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbShelf }}"></div>
+        <div style="position:absolute;left:30.5%;top:63.5%;width:5.5%;height:8.5%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbShelf }}"></div>
+        <div style="position:absolute;left:48%;top:72.5%;width:5.5%;height:8.5%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbShelf }}"></div>
+        <div style="position:absolute;left:59%;top:62.5%;width:14.5%;height:6%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbFreq }}"></div>
+        <div style="position:absolute;left:50.5%;top:29.5%;width:12.5%;height:4.5%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ cbName }}"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-height:0">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#63493A">Chart legend — click to locate</div>
+        <button sc-camel-on-click="{{ pickCbOuter }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:12px;border-radius:2px;background:#B0517A;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Outer ring — 10 NM shelf</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ cbOuter }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickCbInner }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:12px;border-radius:2px;background:#B0517A;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Inner core — 5 NM</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ cbInner }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickCbSfc }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Core altitudes — 44/SFC</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ cbSfc }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickCbShelf }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Shelf ceiling &amp; floor</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ cbShelf }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickCbName }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Airspace name label</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ cbName }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickCbFreq }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Approach control frequency</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ cbFreq }}"></span>
+        </button>
+        <div style="margin-top:auto;background:#002E6D;color:#fff;border-radius:14px;padding:24px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">{{ cbDesc }}</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:12px;font-weight:600">Authorization required throughout · skyvector.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 11 CLASS E SFC + 700 AUGUSTA -->
+  <section data-label="Class E: Surface vs 700" data-screen-label="08" data-speaker-notes="Augusta State is a non-towered field with Class E all the way down to the surface — the dashed magenta ring. That is E2, and it needs authorization even though there is no tower. Step outside the ring and you are under the soft magenta vignette, where Class E starts at 700 feet; step outside the vignette and it starts at 1,200 feet. Below those floors you are in Class G and need nothing." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Airspace: Class E</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 24px;letter-spacing:-0.01em">Surface, 700’, or 1,200’? Augusta, ME</h2>
+    <div style="display:grid;grid-template-columns:1fr 520px;gap:32px;flex:1;min-height:0">
+      <div style="position:relative;aspect-ratio:1.9;width:100%;max-height:100%;align-self:center;justify-self:center;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12);background:#000">
+        <img src="./assets/airspace/img07.jpg" alt="Sectional chart excerpt near Augusta, Maine showing Class E surface airspace and the 700-foot Class E floor vignette" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block">
+        <div style="position:absolute;inset:0;background:#002E6D;pointer-events:none;opacity:{{ agDim }}"><div style="position: absolute; left: 899px; top: 188px; width: 15.5%; height: 5.5%; border: 5px solid #002E6D; border-radius: 8px; box-shadow: 0 0 0 4px rgba(255,255,255,0.85); pointer-events: none; opacity: {{ agFreq }}"></div><div style="position: absolute; left: 138px; top: 402px; width: 9%; height: 13.5%; border: 6px solid #1A5532; border-radius: 50%; box-shadow: 0 0 0 4px rgba(255,255,255,0.85); pointer-events: none; opacity: {{ agG }}"></div></div>
+        <div style="position:absolute;left:33.3%;top:64.9%;width:12%;height:22.7%;border:6px dashed #8C2350;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ agSfc }}"></div>
+        <div style="position:absolute;left:50.1%;top:33.2%;width:6%;height:10%;border:6px solid #B0517A;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ ag700 }}"></div>
+        <div style="position:absolute;left:29.5%;top:66.5%;width:14%;height:7%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ agData }}"></div>
+        
+        
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-height:0">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#63493A">Chart legend — click to locate</div>
+        <button sc-camel-on-click="{{ pickAgSfc }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:0;border-top:12px dashed #8C2350;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class E to the surface (E2)</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ agSfc }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickAg700 }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:16px;border-radius:2px;background:linear-gradient(90deg,#B0517A,rgba(176,81,122,0.15));flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class E floor at 700’ AGL</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ ag700 }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickAgG }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:16px;border-radius:2px;background:#C6D8B6;border:1px solid #1A5532;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class G — unshaded country</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ agG }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickAgData }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Airport data block</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ agData }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickAgFreq }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Approach control frequency</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ agFreq }}"></span>
+        </button>
+        <div style="margin-top:auto;background:#002E6D;color:#fff;border-radius:14px;padding:24px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">{{ agDesc }}</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:12px;font-weight:600">Only E2 at the surface needs authorization · skyvector.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 12 CLASS E EXTENSION MVY -->
+  <section data-label="Class E Extension" data-screen-label="09" data-speaker-notes="Martha's Vineyard shows a pattern you will meet often: a dashed blue Class D circle around the field, with a dashed magenta extension hanging off it to the northeast to protect the instrument approach. Inside that extension Class E reaches the surface, so authorization is required there even though it sits outside the Class D circle. The boxed 26 is the Class D ceiling — 2,600 feet MSL. Nantucket's Class D sits at the lower right for comparison." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Airspace: Class E</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 24px;letter-spacing:-0.01em">Class E extensions: Martha’s Vineyard</h2>
+    <div style="display:grid;grid-template-columns:1fr 520px;gap:32px;flex:1;min-height:0">
+      <div style="position:relative;aspect-ratio:1.9;width:100%;max-height:100%;align-self:center;justify-self:center;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12);background:#000">
+        <img src="./assets/airspace/img08.jpg" alt="Sectional chart excerpt of Martha’s Vineyard showing the Class D circle with a dashed magenta Class E surface extension" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block">
+        <div style="position:absolute;inset:0;background:#002E6D;pointer-events:none;opacity:{{ mvDim }}"><div style="position: absolute; left: 25px; top: 428px; width: 15%; height: 5.5%; border: 5px solid #002E6D; border-radius: 8px; box-shadow: 0 0 0 4px rgba(255,255,255,0.85); pointer-events: none; opacity: {{ mvFreq }}"></div><div style="position: absolute; left: 489px; top: 227px; width: 139px; height: 107px; border: 5px dashed #8C2350; border-radius: 10px; box-shadow: 0 0 0 4px rgba(255,255,255,0.85); pointer-events: none; opacity: {{ mvExt }}"></div></div>
+        <div style="position: absolute; left: 326px; top: 203px; width: 27%; height: 51.6%; border: 6px dashed #1B4FD8; border-radius: 50%; box-shadow: 0 0 0 4px rgba(255,255,255,0.85); pointer-events: none; opacity: {{ mvD }}"></div>
+        <div style="position:absolute;left:43.5%;top:54.5%;width:4.5%;height:7.5%;border:5px solid #002E6D;border-radius:8px;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ mvCeil }}"></div>
+        <div style="position:absolute;left:58.5%;top:7%;width:18%;height:16%;border:6px solid #B0517A;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ mv700 }}"></div>
+        <div style="position:absolute;left:74.5%;top:61%;width:24%;height:45%;border:6px dashed #1B4FD8;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.85);pointer-events:none;opacity:{{ mvAck }}"></div>
+        
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-height:0">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#63493A">Chart legend — click to locate</div>
+        <button sc-camel-on-click="{{ pickMvD }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:0;border-top:12px dashed #1B4FD8;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class D — Martha’s Vineyard</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ mvD }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickMvExt }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:0;border-top:12px dashed #8C2350;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class E surface extension</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ mvExt }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickMvCeil }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class D ceiling — boxed 26</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ mvCeil }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickMv700 }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:16px;border-radius:2px;background:linear-gradient(90deg,#B0517A,rgba(176,81,122,0.15));flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class E floor at 700’ AGL</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ mv700 }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickMvAck }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:0;border-top:12px dashed #1B4FD8;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Class D — Nantucket</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ mvAck }}"></span>
+        </button>
+        <button sc-camel-on-click="{{ pickMvFreq }}" style="display:flex;align-items:center;gap:18px;text-align:left;background:#F2EDE7;border:2px solid #DDD3C8;border-radius:12px;padding:15px 20px;cursor:pointer;font-family:'Montserrat',sans-serif" style-hover="background:#E7DFD5">
+          <span style="width:52px;height:22px;border-radius:3px;border:3px solid #002E6D;flex:none"></span>
+          <span style="font-weight:600;font-size:24px;color:#002E6D;flex:1">Approach control frequency</span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#002E6D;flex:none;opacity:{{ mvFreq }}"></span>
+        </button>
+        <div style="margin-top:auto;background:#002E6D;color:#fff;border-radius:14px;padding:24px">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">{{ mvDesc }}</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:12px;font-weight:600">Extensions carry the same rules as the surface area · skyvector.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 07 CLASS G -->
+  <section data-label="Class G" data-screen-label="10" data-speaker-notes="Class G and Class E are where nearly all drone flights happen. Class G is uncontrolled — no ATC services provided to general aviation. It is everything not classified A through E, it typically sits below Class E, and it is not drawn on sectional charts. Most importantly: flying a drone in Class G requires no FAA approval." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:78px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#1A5532;margin-bottom:12px">Airspace: Class G</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 42px;letter-spacing:-0.01em">Uncontrolled</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;flex:1;min-height:0">
+      <sc-for list="{{ classGItems }}" as="item" hint-placeholder-count="4">
+        <div style="background:#fff;border-radius:16px;padding:34px;box-shadow:0 8px 20px rgba(61,46,37,0.08);display:flex;align-items:flex-start;gap:20px">
+          <div style="min-width:12px;height:12px;border-radius:50%;background:#1A5532;margin-top:14px"></div>
+          <div style="font-family:'Source Serif 4',serif;font-size:27px;line-height:1.4">{{ item }}</div>
+        </div>
+      </sc-for>
+      <div style="grid-column:1 / -1;background:#1A5532;color:#fff;border-radius:16px;padding:34px 40px;display:flex;align-items:center;gap:28px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:56px;color:#FFC72C">G</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:32px;line-height:1.35">Drone operation in Class G airspace does <strong>not</strong> require FAA approval.</div>
+      </div>
+    </div>
+  </section>
+  <!-- 08 CLASS E -->
+  <section data-label="Class E" data-screen-label="11" data-speaker-notes="Class E is the tricky one. The only version that concerns drone operators is Class E that starts at the surface — E2, designated for an airport. Piloted aircraft in surface-level Class E are likely flying by reference to onboard instruments, and they are not required to obtain authorization to enter. You are: drone operation in Class E2 below 400 feet AGL requires FAA approval." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:78px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:12px">Airspace: Class E</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:58px;color:#002E6D;margin:0 0 42px;letter-spacing:-0.01em">Controlled, and easy to miss</h2>
+    <div style="display:flex;flex-direction:column;gap:24px;flex:1;min-height:0">
+      <sc-for list="{{ classEItems }}" as="item" hint-placeholder-count="3">
+        <div style="background:#F2EDE7;border-radius:16px;border-left:6px solid #3E8EDE;padding:30px 36px;flex:1;display:flex;align-items:center">
+          <div style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.4">{{ item }}</div>
+        </div>
+      </sc-for>
+      <div style="background:#002E6D;color:#fff;border-radius:16px;padding:32px 40px;display:flex;align-items:center;gap:28px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:52px;color:#FFC72C">E2</div>
+        <div>
+          <div style="font-family:'Source Serif 4',serif;font-size:31px;line-height:1.35">Drone operation in Class E2 airspace below 400’ AGL requires FAA approval.</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7;margin-top:10px">* where Class E is the primary airspace for an airport</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 09 CLASS E ON CHARTS -->
+  <section data-label="Class E on Charts" data-screen-label="12" data-speaker-notes="Two chart excerpts, two different Class E situations. Bar Harbor: the dashed magenta ring with the pale interior is Class E2 starting at the surface, designated for that airport — authorization required. Belfast: Class E here starts at 700 feet AGL, well above where you are flying." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Airspace: Class E</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 26px;letter-spacing:-0.01em">Reading Class E on the chart</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+        <div style="position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+          <img src="./assets/airspace/img09.png" alt="Sectional chart excerpt at Hancock County / Bar Harbor showing Class E2 surface airspace" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="background:#fff;border-radius:14px;border-top:6px solid #B24E10;padding:26px;box-shadow:0 8px 20px rgba(61,46,37,0.08)">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:8px">Class E2</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.4">Starts at the surface, designated for an airport — Hancock County / Bar Harbor.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+        <div style="position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+          <img src="./assets/airspace/img10.png" alt="Sectional chart excerpt at Belfast Municipal showing Class E airspace beginning at 700 feet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="background:#fff;border-radius:14px;border-top:6px solid #3E8EDE;padding:26px;box-shadow:0 8px 20px rgba(61,46,37,0.08)">
+          <div style="font-weight:700;font-size:26px;color:#002E6D;margin-bottom:8px">Class E</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.4">Starts at 700’ AGL — above the drone envelope, no authorization needed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- E FLOORS ANNOTATED -->
+  <section data-label="Class E Floors" data-screen-label="13" data-speaker-notes="The shaded magenta vignette tells you the floor. Inside the soft magenta band, Class E begins at 700 feet AGL. Outside it, across the open country, Class E begins at 1,200 feet AGL. Learn to see this shading — it is the single most useful chart cue for a drone pilot.  Question: What is the airspace below Class E ?" style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Airspace: Class E</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 26px;letter-spacing:-0.01em">Where does the floor sit?</h2>
+    <div style="position:relative;flex:1;min-height:0;border-radius:18px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 12px 28px rgba(61,46,37,0.14)">
+      <img src="./assets/airspace/img11.jpg" alt="Annotated sectional chart: Class E begins at 700 feet AGL inside the magenta vignettes and 1,200 feet AGL elsewhere" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+    <div style="margin-top:22px;font-family:'Source Serif 4',serif;font-size:26px;color:#3D2E25;max-width:1500px">The soft magenta vignette marks a 700’ AGL Class E floor; unshaded country is 1,200’ AGL.</div>
+  </section>
+  <!-- 11 E + G PROFILE -->
+  <section data-label="Class E and G" data-screen-label="14" data-speaker-notes="Put it together in section view. Class E from 1,200 feet caps the wide area, dropping to 700 feet near an airport, and dropping all the way to the surface for E2. Your operating envelope — surface to 400 feet AGL — is the yellow band: Class G everywhere except inside that E2 column." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:10px">Airspace: Class E and Class G</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;margin:0 0 26px;letter-spacing:-0.01em">Your 400 feet, in cross-section</h2>
+    <div style="position:relative;flex:1;min-height:0;border-radius:18px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,0.4);background:#fff">
+      <img src="./assets/airspace/img12.png" alt="Section diagram: Class E from 1,200 ft AGL, Class E from 700 ft AGL, Class E2 at the surface, and the surface-to-400-ft drone band" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+    </div>
+    <div style="margin-top:22px;font-family:'Source Serif 4',serif;font-size:26px;color:rgba(255,255,255,0.85);max-width:1500px">Surface to 400’ AGL is your envelope — Class G, unless an E2 column reaches the ground beneath you.</div>
+  </section>
+  <!-- 12 NOTIFICATIONS -->
+  <section data-label="Airspace Notifications" data-screen-label="15" data-speaker-notes="Airspace also changes day to day. A TFR is a block of airspace with restrictions temporarily put in place — movement of government officials, natural disasters, special events. A NOTAM, Notice to Air Missions, formerly Notice to Airmen, alerts pilots to hazards at departure, destination, or alternates. Check 1800wxbrief.com before you fly." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#B24E10;margin-bottom:10px">Before the flight</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 26px;letter-spacing:-0.01em">Airspace notifications</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+        <div style="background:#F2EDE7;border-radius:14px;border-left:6px solid #B24E10;padding:26px 30px">
+          <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#002E6D;margin-bottom:10px">TFRs</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">Temporary Flight Restrictions — a volume of restricted airspace, often for VIP movement, wildfires, or special events.</div>
+        </div>
+        <div style="position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+          <img src="./assets/airspace/img13.png" alt="Esri US Wildfires map showing a wildfire incident perimeter used to define a temporary flight restriction" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+        <div style="background:#F2EDE7;border-radius:14px;border-left:6px solid #3E8EDE;padding:26px 30px">
+          <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:40px;color:#002E6D;margin-bottom:10px">NOTAMs</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">Notice to Air Missions — issued so pilots know the hazards along their route, at departure, destination, and alternates.</div>
+        </div>
+        <div style="position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+          <img src="./assets/airspace/img14.png" alt="FlightService interactive map showing an active NOTAM and temporary flight restriction over Massachusetts" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 13 UAS FACILITY MAPS -->
+  <section data-label="UAS Facility Maps" data-screen-label="16" data-speaker-notes="The UAS Facility Map is a specialized map service built to give drone pilots airspace awareness during mission planning. Each grid cell shows the maximum altitude the FAA will normally approve there. Zoom to Medford and you can read our own ceiling: much of campus sits in the Logan Class B environment with a 300-foot permissible altitude." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#3E8EDE;margin-bottom:10px">Airspace environment &amp; authorizations</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 26px;letter-spacing:-0.01em">UAS Facility Maps</h2>
+    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:36px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+        <img src="./assets/airspace/img15.png" alt="FAA UAS Facility Map of the Boston area with grid cells showing maximum approvable altitudes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;min-height:0">
+        <div style="position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;border:1px solid #DDD3C8;box-shadow:0 10px 24px rgba(61,46,37,0.12)">
+          <img src="./assets/airspace/img16.png" alt="UAS Facility Map zoomed to Tufts University in Medford showing a 250 foot ceiling cell for Boston Logan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="background:#fff;border-radius:14px;border-top:6px solid #3E8EDE;padding:26px;box-shadow:0 8px 20px rgba(61,46,37,0.08)">
+          <div style="font-family:'Source Serif 4',serif;font-size:25px;line-height:1.45">Each cell is the maximum altitude the FAA will normally approve. Medford sits under the Logan Class B environment.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 14 LAANC -->
+  <section data-label="LAANC" data-screen-label="17" data-speaker-notes="LAANC — Low Altitude Authorization and Notification Capability — is the airspace system built specifically for drone pilots to request authorization. FAA airspace data, TFRs, NOTAMs and facility maps flow through the UAS Data Exchange to approved service suppliers, who hand you an answer in your app, often instantly." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:10px">Airspace environment &amp; authorizations</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;margin:0 0 12px;letter-spacing:-0.01em">LAANC</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:29px;line-height:1.35;margin:0 0 26px;color:rgba(255,255,255,0.9)">Low Altitude Authorization and Notification Capability — airspace authorization built for drone pilots.</p>
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:36px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 14px 32px rgba(0,0,0,0.35)">
+        <img src="./assets/airspace/img17.png" alt="FAA diagram: drone users request authorization through UAS service suppliers, which connect to the FAA UAS Data Exchange and air traffic" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+      </div>
+      <div style="position:relative;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 14px 32px rgba(0,0,0,0.35)">
+        <img src="./assets/airspace/img18.png" alt="LAANC authorization request pre-check results screen showing eligibility for auto-approval" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+      </div>
+    </div>
+    <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-size:24px;color:#98D5C7">Source: FAA</div>
+  </section>
+  <!-- 15 ALOFT IN PRACTICE -->
+  <section data-label="In Practice" data-screen-label="18" data-speaker-notes="B4UFLY has been retired; Aloft is what we use. Open it on site: it reads your location, tells you plainly that you are in controlled airspace, shows the permissible altitude from the facility map — 300 feet here — and gives you the Get LAANC button. Do this as part of your pre-flight checklist, not after you have unfolded the props." style="width:1920px;height:1080px;background:#fff;color:#3D2E25;display:flex;flex-direction:column;padding:70px 90px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
+    <div class="eyebrow" style="color:#B24E10;margin-bottom:10px">In the field</div>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:54px;color:#002E6D;margin:0 0 8px;letter-spacing:-0.01em">Requesting authorization on site</h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:28px;line-height:1.35;margin:0 0 26px;color:#63493A">B4UFLY is retired — we plan and request in Aloft.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:36px;flex:1;min-height:0">
+      <div style="position:relative;border-radius:16px;overflow:hidden;background:#F2EDE7;border:1px solid #DDD3C8">
+        <img src="./assets/airspace/img19.png" alt="Aloft app showing the Tufts University location flagged as controlled airspace requiring authorization" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+      </div>
+      <div style="position:relative;border-radius:16px;overflow:hidden;background:#F2EDE7;border:1px solid #DDD3C8">
+        <img src="./assets/airspace/img20.png" alt="Aloft app detail view showing UAS Facility Map permissible altitude of 300 feet and a Get LAANC button" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center">
+        <sc-for list="{{ practiceItems }}" as="item" hint-placeholder-count="3">
+          <div style="background:#F2EDE7;border-radius:14px;border-left:6px solid #3E8EDE;padding:24px 28px">
+            <div style="font-family:'Source Serif 4',serif;font-size:26px;line-height:1.4">{{ item }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  <!-- 16 TAKEAWAYS -->
+  <section data-label="Final Thoughts" data-screen-label="19" data-speaker-notes="Three things to carry away. Know your class before you fly. Class G needs nothing; Class E2 at the surface and Class B, C, D need authorization. And airspace is not static — TFRs and NOTAMs change the answer on the day." style="width:1920px;height:1080px;background:#63493A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box;position:relative">
+    <div class="eyebrow" style="color:#FFC72C;margin-bottom:32px">Final Thoughts</div>
+    <div style="display:flex;flex-direction:column;gap:34px;max-width:1550px">
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#FFC72C">01</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:32px;line-height:1.45">Identify your airspace class before every flight — the chart, the facility map, then the app.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#FFC72C">02</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:32px;line-height:1.45">Class G needs no approval. Class B, C, D and surface-level Class E2 do.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <div style="font-family:'Playfair Display',serif;font-weight:800;font-size:44px;color:#FFC72C">03</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:32px;line-height:1.45">Airspace is not static — TFRs and NOTAMs can close a legal site on the day you fly.</div>
+      </div>
+    </div>
+  </section>
+  <!-- 17 REFERENCES -->
+  <section data-label="References" data-screen-label="20" data-speaker-notes="Resources for going deeper: Pilot Institute's Airspace Explained, the FAA UAS Facility Maps viewer, SkyVector for charts, and the Aloft AirControl training video series. All linked on Canvas." style="width:1920px;height:1080px;background:#002E6D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 150px;box-sizing:border-box;position:relative">
+    <div class="eyebrow" style="color:#98D5C7;margin-bottom:28px">References &amp; resources</div>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:26px;max-width:1560px">
+      <sc-for list="{{ references }}" as="ref" hint-placeholder-count="4">
+        <li style="font-family:'Source Serif 4',serif;font-size:{{ referencesFontSize }}px;line-height:1.4"><strong style="font-family:'Montserrat',sans-serif;font-weight:700">{{ ref.name }}</strong> — {{ ref.url }}</li>
+      </sc-for>
+    </ul>
+    <div style="margin-top:56px;font-family:'Montserrat',sans-serif;font-size:26px;color:#FFC72C;font-weight:600;letter-spacing:0.06em">TUFTS DRONE PROGRAM · TUFTS UNIVERSITY DATA LAB</div>
+  <a href="./Index.dc.html" style="position:absolute;bottom:40px;left:40px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid #3E8EDE;border-radius:6px;background:rgba(0,0,0,0.35);color:#3E8EDE;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;text-decoration:none;letter-spacing:0.02em;z-index:20">← Home</a>
+</section>
+
+</x-import>
+
+<button sc-camel-on-click="{{ toggleNotes }}" style="position:absolute;right:24px;bottom:24px;z-index:50;background:#002E6D;color:#fff;border:none;border-radius:100px;padding:12px 22px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.03em;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.25)">{{ notesButtonLabel }}</button>
+<sc-if value="{{ notesOpen }}">
+  <div style="position:absolute;left:24px;right:24px;bottom:80px;z-index:50;background:#fff;border-radius:16px;border-top:6px solid #3E8EDE;box-shadow:0 16px 36px rgba(0,0,0,0.3);padding:24px 28px;max-height:220px;overflow:auto">
+    <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;color:#3E8EDE;margin-bottom:8px">Speaker Notes · {{ notesSlideLabel }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:20px;line-height:1.5;color:#3D2E25">{{ notesText }}</div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CLASS_G_ITEMS = [
+  'Uncontrolled \u2014 no ATC services provided to general aviation.',
+  'Everything not classified A, B, C, D or E.',
+  'Typically sits below Class E airspace.',
+  'Not represented on FAA sectional charts.',
+];
+
+const CLASS_E_ITEMS = [
+  'Class E starting at the surface is the only Class E concern for drone operators.',
+  'Piloted aircraft in surface-level Class E are likely flying by reference to onboard instruments.',
+  'Piloted aircraft are not required to obtain authorization to enter Class E airspace \u2014 you are.',
+];
+
+const PRACTICE_ITEMS = [
+  'Check location and class on site, before the props go on.',
+  'Read the permissible altitude from the UAS Facility Map cell.',
+  'Request LAANC, then log the confirmation number.',
+];
+
+const REFERENCES = [
+  { name: 'Pilot Institute: Airspace Explained', url: 'pilotinstitute.com/airspace-explained' },
+  { name: 'FAA UAS Facility Maps', url: 'faa.maps.arcgis.com \u2192 UAS Data viewer' },
+  { name: 'SkyVector', url: 'skyvector.com' },
+  { name: 'Aloft AirControl video series', url: 'aloft.ai/help/the-aloft-air-control-training-video-series' },
+];
+
+const SLIDE_NOTES = [
+  { label: 'Title', text: 'Airspace restrictions and authorizations are designed to promote the safe integration and operation of unmanned aircraft in controlled airspace. As remote pilot in command you should review all necessary information needed to plan a small UAS operation in compliance with flight regulations and altitude restrictions.' },
+  { label: 'Section: Airspace', text: 'Everything in this session comes back to one question you must answer before every flight: what class of airspace am I in, and does it require authorization?' },
+  { label: 'Airspace Classes', text: 'Class A is off limits entirely. B, C and D are controlled airspace centered over airports of decreasing size \u2014 busiest, medium, then small city and rural with a 4 NM radius. Class E sits near non-towered airports and everywhere else that is controlled but not A through D. Class G is everything left over. Authorization difficulty rises as you move up the table.' },
+  { label: 'Airspace Profile', text: 'Click each class on the diagram to bring up its detail panel. This is the classic profile view from the FAA Pilot\u2019s Handbook of Aeronautical Knowledge, Chapter 14 \u2014 and it is not to scale. Class A caps everything at 18,000 ft MSL. The upside-down wedding cakes are B and C; D is a simple cylinder; Class G fills the gaps below.' },
+  { label: 'Aeronautical Charts', text: 'Click a legend row to dim the chart and ring the matching airspace. Aeronautical charts are how airspace is actually published. Solid blue bands are Class B, magenta is Class C, dashed blue is Class D with a boxed ceiling in hundreds of feet, and magenta shading marks where Class E begins. Only controlled and reserved airspace effective below 18,000 ft MSL appears on a sectional, and all times are local. Pull up SkyVector and find our field together.' },
+  { label: 'Class C on Charts', text: 'Click a legend row to locate it. Burlington International is the Class C example. Two solid magenta rings: a 5 NM core from the surface up, and a 10 NM shelf whose floor sits above the ground. The fraction is ceiling over floor in hundreds of feet \u2014 44 over SFC in the core, 44 over 15 or 44 over 22 out on the shelf. Any drone work inside either ring needs authorization.' },
+  { label: 'Airspace in 3D', text: 'Charts are flat; airspace is a volume. Draped over terrain in Google Earth you can see the Worcester Class C shelves stack outward and upward \u2014 the same shape as the wedding-cake diagram, but over real ground you might be flying.' },
+  { label: 'Class G', text: 'Class G and Class E are where nearly all drone flights occur. Class G is uncontrolled \u2014 no services provided to general aviation. It is everything not classified A through E, it typically sits below Class E, and it is not drawn on sectional charts. Most importantly: flying a drone in Class G requires no FAA approval.' },
+  { label: 'Class E', text: 'Class E can be tricky to understand. The only version that concerns drone operators is Class E starting at the surface \u2014 E2, designated for an airport \u2014 which requires authorization. Piloted aircraft in surface-level Class E are likely flying by reference to onboard instruments, and they are not required to obtain authorization to enter. You are: drone operation in Class E2 below 400\u2019 AGL requires FAA approval.' },
+  { label: 'Class E on Charts', text: 'Two chart excerpts, two different Class E situations. Bar Harbor: the dashed magenta ring with the pale interior is Class E2 starting at the surface, designated for that airport \u2014 authorization required. Belfast: Class E here starts at 700 ft AGL, well above where you are flying.' },
+  { label: 'Class E: Surface vs 700', text: 'Click a legend row to locate it. Augusta State is a non-towered field with Class E all the way down to the surface \u2014 the dashed magenta ring, E2, which needs authorization even without a tower. Outside the ring, under the soft magenta vignette, Class E starts at 700\u2019 AGL; outside the vignette it starts at 1,200\u2019. Below those floors you are in Class G.' },
+  { label: 'Class E Extension', text: 'Click a legend row to locate it. Martha\u2019s Vineyard shows a common pattern: a dashed blue Class D circle around the field with a dashed magenta extension to the northeast protecting the instrument approach. Inside the extension Class E reaches the surface, so authorization is required there even though it lies outside the Class D circle. The boxed 26 is the Class D ceiling \u2014 2,600\u2019 MSL.' },
+  { label: 'Class E Floors', text: 'The shaded magenta vignette tells you the floor. Inside the soft magenta band, Class E begins at 700\u2019 AGL. Outside it, across open country, Class E begins at 1,200\u2019 AGL. Learn to see this shading \u2014 it is the single most useful chart cue for a drone pilot.' },
+  { label: 'Class E and G', text: 'Put it together in section view. Class E from 1,200 ft caps the wide area, dropping to 700 ft near an airport, and dropping all the way to the surface for E2. Your operating envelope \u2014 surface to 400 ft AGL \u2014 is the yellow band: Class G everywhere except inside that E2 column.' },
+  { label: 'Airspace Notifications', text: 'Airspace also changes day to day. A Temporary Flight Restriction is a block of airspace that has had restrictions put in place \u2014 movement of government officials, natural disasters, or other special events. A NOTAM, Notice to Air Missions (formerly Notice to Airmen), ensures pilots are aware of potential hazards along their route, including at departure, destination and alternates. Check 1800wxbrief.com before you fly.' },
+  { label: 'UAS Facility Maps', text: 'The UAS Facility Map is a specialized map service designed to give drone pilots airspace awareness during mission planning. Each grid cell shows the maximum altitude the FAA will normally approve there. Zoom to Medford and you can read our own ceiling \u2014 much of campus sits in the Logan Class B environment.' },
+  { label: 'LAANC', text: 'LAANC \u2014 Low Altitude Authorization and Notification Capability \u2014 is the airspace system specifically designed for drone pilots to request airspace authorization. FAA airspace data, TFRs, NOTAMs and facility maps flow through the FAA\u2019s UAS Data Exchange to approved service suppliers, who hand you an answer in your app, often instantly.' },
+  { label: 'In Practice', text: 'B4UFLY has been retired; Aloft is what we use. Open it on site: it reads your location, tells you plainly that you are in controlled airspace, shows the permissible altitude from the facility map, and gives you the Get LAANC button. Do this as part of your pre-flight checklist, not after you have unfolded the props.' },
+  { label: 'Final Thoughts', text: 'Three things to carry away. Know your class before you fly. Class G needs nothing; Class B, C, D and surface-level E2 need authorization. And airspace is not static \u2014 TFRs and NOTAMs change the answer on the day.' },
+  { label: 'References', text: 'Resources for going deeper: Pilot Institute\u2019s Airspace Explained, the FAA UAS Facility Maps viewer, SkyVector for charts, and the Aloft AirControl training video series. All linked on Canvas.' },
+];
+
+const CLASS_INFO = {
+  A: { color: '#B3261E', ink: '#fff', title: 'The high altitude structure', body: 'From 18,000\u2019 MSL up to FL600, everywhere over the country. Everything here is on an instrument flight plan under positive ATC control.', auth: 'Drones prohibited' },
+  B: { color: '#1B4FD8', ink: '#fff', title: 'The busiest airports', body: 'An upside-down wedding cake of shelves around the nation’s highest-volume airports — Boston Logan, for example — has an inner cylinder from SFC to 7,ooo\' MSL, then 2,000\' to 7,000\', 3,000\' to 7,000\', and 4,000\' to 7,000\' MSL', auth: 'Authorization required' },
+  C: { color: '#8C2350', ink: '#fff', title: 'Medium-sized airports', body: 'A smaller two-tier cake around airports with a control tower and radar service, such as Worcester Regional. Identified by solid magenta concentric cirles.', auth: 'Authorization required' },
+  D: { color: '#4E86C9', ink: '#fff', title: 'Small city & rural towered airports', body: 'A simple cylinder, typically about 4 NM in radius, around a towered field. Identified by blue dashed line. The boxed number on the chart is its ceiling in hundreds of feet.', auth: 'Authorization required' },
+  E: { color: '#B0517A', ink: '#fff', title: 'Controlled, but not A\u2013D', body: 'Fills the controlled airspace that is not A, B, C or D \u2014 usually beginning at 700\u2019 or 1,200\u2019 AGL, but dropping to the surface (E2) where it is the primary airspace for an airport.', auth: 'Required only where Class E starts at the surface (E2)' },
+  G: { color: '#D9D3C8', ink: '#3D2E25', title: 'Uncontrolled', body: 'Everything left over, below Class E and not drawn on sectional charts. No ATC services are provided to general aviation here \u2014 and it is where most drone flights happen.', auth: 'No FAA approval needed' },
+};
+
+class Component extends DCLogic {
+  state = { notesOpen: false, slideIndex: 0, activeClass: 'A', chartPick: '', cbPick: '', agPick: '', mvPick: '' };
+
+  componentDidMount() {
+    this._onMsg = (e) => {
+      if (e.data && typeof e.data.slideIndexChanged === 'number') this.setState({ slideIndex: e.data.slideIndexChanged });
+    };
+    window.addEventListener('message', this._onMsg);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onMsg);
+  }
+
+  renderVals() {
+    const note = SLIDE_NOTES[this.state.slideIndex] || SLIDE_NOTES[0];
+    const ac = this.state.activeClass;
+    const info = CLASS_INFO[ac];
+    const pick = (c) => () => this.setState({ activeClass: c });
+    const cp = this.state.chartPick;
+    const chartPick = (k) => () => this.setState({ chartPick: this.state.chartPick === k ? '' : k });
+    const CHART_DESC = {
+      '': 'Solid blue bands are Class B, magenta is Class C, dashed blue is Class D. Magenta and blue vignettes show where the Class E floor sits. Pick a legend row to locate it on the chart.',
+      B: 'Boston Class B \u2014 the traced line is the outer boundary. Everything east of it is inside the Class B shelves, and each shelf has its own floor; drone work anywhere inside needs authorization.',
+      C: 'Class C is drawn as solid magenta rings around a towered airport with radar service \u2014 none appears in this excerpt.',
+      D: 'Worcester Regional (ORH) Class D \u2014 the dashed blue circle around the field, with the chart note \u201CClass-D excluded below 1900 MSL\u201D just to the west.',
+      Es: 'Class E starting at the surface (E2) is a dashed magenta ring around an airport. There is none in this excerpt \u2014 see the Bar Harbor example later in the deck.',
+      E7: 'Inside the soft magenta vignettes the Class E floor drops to 700\u2019 AGL \u2014 here, the rings around Worcester / Spencer and around Southbridge in the southwest.',
+      E12: 'Outside the vignettes, over open country, the Class E floor is 1,200\u2019 AGL \u2014 everything below it is Class G.',
+    };
+    const mapPick = (key) => (k) => () => {
+      const cur = this.state[key];
+      this.setState({ [key]: cur === k ? '' : k });
+    };
+    const cbSet = mapPick('cbPick'), agSet = mapPick('agPick'), mvSet = mapPick('mvPick');
+    const cb = this.state.cbPick, ag = this.state.agPick, mv = this.state.mvPick;
+    const CB_DESC = {
+      '': 'Two solid magenta rings around a towered field with radar service. Pick a legend row to locate it on the chart.',
+      outer: 'The outer ring is the 10 NM shelf. Its floor is above the ground \u2014 read the lower half of the fraction \u2014 but the FAA still treats the whole footprint as Class C for authorization.',
+      inner: 'The inner ring is the 5 NM core, Class C from the surface upward. This is the busiest airspace on the excerpt.',
+      sfc: '44 over SFC: ceiling 4,400\u2019 MSL, floor at the surface. Fractions on a sectional are always hundreds of feet MSL.',
+      shelf: '44 over 15 and 44 over 22: on the shelf, Class C runs from 1,500\u2019 or 2,200\u2019 MSL up to 4,400\u2019. Below the shelf floor the airspace is Class E or G.',
+      name: 'The airspace name is printed in magenta with a note pointing you to NOTAMs and the Chart Supplement for effective hours.',
+      freq: 'The boxed magenta legend gives the approach control frequency and the radius it covers \u2014 Burlington Approach within 20 NM.',
+    };
+    const AG_DESC = {
+      '': 'Augusta State sits under Class E that reaches the surface, surrounded by country where the Class E floor is 700\u2019 or 1,200\u2019. Pick a legend row to locate it.',
+      sfc: 'The dashed magenta ring is Class E to the surface (E2), designated for Augusta State. No tower, but drone operations inside still require FAA authorization.',
+      e700: 'Inside the soft magenta vignette, Class E begins at 700\u2019 AGL. You are legal below it without authorization \u2014 but it is the cue that an instrument approach is nearby.',
+      g: 'Unshaded, unringed country: Class E begins at 1,200\u2019 AGL and everything below is Class G. No FAA approval needed to fly here.',
+      data: 'The airport data block: identifier, field elevation, lighting, longest runway in hundreds of feet, and the CTAF / ASOS frequencies.',
+      freq: 'Bangor Approach within 20 NM \u2014 the controlling facility if you ever need to talk to someone about this area.',
+    };
+    const MV_DESC = {
+      '': 'A Class D circle with a Class E surface extension hanging off it \u2014 a pattern worth recognising. Pick a legend row to locate it.',
+      d: 'The dashed blue circle is Class D around Martha\u2019s Vineyard (MVY), surface up to the boxed ceiling. Authorization required.',
+      ext: 'The dashed magenta shape is a Class E surface extension protecting the instrument approach. Class E reaches the surface inside it, so authorization is required \u2014 even though it is outside the Class D circle.',
+      ceil: 'The boxed 26 is the Class D ceiling: 2,600\u2019 MSL. A boxed number always means the ceiling of the airspace it sits in.',
+      e700: 'The soft magenta vignette marks a 700\u2019 AGL Class E floor across the surrounding water and shoreline.',
+      ack: 'Nantucket Memorial (ACK) carries its own Class D circle \u2014 two separate authorizations, two separate airports, on one chart.',
+      freq: 'Boston Approach within 20 NM on 133.75 \u2014 the controlling facility for this island group.',
+    };
+    return {
+      cbDim: cb ? 0.3 : 0,
+      cbOuter: cb === 'outer' ? 1 : 0,
+      cbInner: cb === 'inner' ? 1 : 0,
+      cbSfc: cb === 'sfc' ? 1 : 0,
+      cbShelf: cb === 'shelf' ? 1 : 0,
+      cbName: cb === 'name' ? 1 : 0,
+      cbFreq: cb === 'freq' ? 1 : 0,
+      cbDesc: CB_DESC[cb] || CB_DESC[''],
+      pickCbOuter: cbSet('outer'),
+      pickCbInner: cbSet('inner'),
+      pickCbSfc: cbSet('sfc'),
+      pickCbShelf: cbSet('shelf'),
+      pickCbName: cbSet('name'),
+      pickCbFreq: cbSet('freq'),
+      agDim: ag ? 0.3 : 0,
+      agSfc: ag === 'sfc' ? 1 : 0,
+      ag700: ag === 'e700' ? 1 : 0,
+      agG: ag === 'g' ? 1 : 0,
+      agData: ag === 'data' ? 1 : 0,
+      agFreq: ag === 'freq' ? 1 : 0,
+      agDesc: AG_DESC[ag] || AG_DESC[''],
+      pickAgSfc: agSet('sfc'),
+      pickAg700: agSet('e700'),
+      pickAgG: agSet('g'),
+      pickAgData: agSet('data'),
+      pickAgFreq: agSet('freq'),
+      mvDim: mv ? 0.3 : 0,
+      mvD: mv === 'd' ? 1 : 0,
+      mvExt: mv === 'ext' ? 1 : 0,
+      mvCeil: mv === 'ceil' ? 1 : 0,
+      mv700: mv === 'e700' ? 1 : 0,
+      mvAck: mv === 'ack' ? 1 : 0,
+      mvFreq: mv === 'freq' ? 1 : 0,
+      mvDesc: MV_DESC[mv] || MV_DESC[''],
+      pickMvD: mvSet('d'),
+      pickMvExt: mvSet('ext'),
+      pickMvCeil: mvSet('ceil'),
+      pickMv700: mvSet('e700'),
+      pickMvAck: mvSet('ack'),
+      pickMvFreq: mvSet('freq'),
+      dimChart: cp ? 0.28 : 0,
+      hlB: cp === 'B' ? 1 : 0,
+      hlC: cp === 'C' ? 1 : 0,
+      hlD: cp === 'D' ? 1 : 0,
+      hlEs: cp === 'Es' ? 1 : 0,
+      hlE7: cp === 'E7' ? 1 : 0,
+      hlE12: cp === 'E12' ? 1 : 0,
+      chartDesc: CHART_DESC[cp] || CHART_DESC[''],
+      pickB: chartPick('B'),
+      pickC: chartPick('C'),
+      pickD: chartPick('D'),
+      pickEs: chartPick('Es'),
+      pickE7: chartPick('E7'),
+      pickE12: chartPick('E12'),
+      activeClass: ac,
+      activeColor: info.color,
+      activeInk: info.ink,
+      activeTitle: info.title,
+      activeBody: info.body,
+      activeAuth: info.auth,
+      ringA: ac === 'A' ? 1 : 0,
+      ringB: ac === 'B' ? 1 : 0,
+      ringC: ac === 'C' ? 1 : 0,
+      ringD: ac === 'D' ? 1 : 0,
+      ringE: ac === 'E' ? 1 : 0,
+      ringG: ac === 'G' ? 1 : 0,
+      selectA: pick('A'),
+      selectB: pick('B'),
+      selectC: pick('C'),
+      selectD: pick('D'),
+      selectE: pick('E'),
+      selectG: pick('G'),
+      referencesFontSize: this.props.referencesFontSize ?? 32,
+      classGItems: CLASS_G_ITEMS,
+      classEItems: CLASS_E_ITEMS,
+      practiceItems: PRACTICE_ITEMS,
+      references: REFERENCES,
+      notesOpen: this.state.notesOpen,
+      notesButtonLabel: this.state.notesOpen ? 'Hide Speaker Notes' : 'Speaker Notes',
+      notesSlideLabel: note.label,
+      notesText: note.text,
+      toggleNotes: () => this.setState(s => ({ notesOpen: !s.notesOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>
