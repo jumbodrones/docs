@@ -134,15 +134,15 @@ a:hover{color:#3E8EDE}
   <div style="display:grid;grid-template-columns:0.85fr 1fr 1fr;gap:36px;flex:1;min-height:0">
     <div style="background:#F2EDE7;border-radius:20px;padding:24px;display:flex;flex-direction:column;min-width:0;overflow:hidden">
       <div style="font-weight:700;font-size:22px;color:#002E6D;margin-bottom:14px;white-space:nowrap">Field photo</div>
-      <image-slot id="gcp-field-photo" shape="rounded" radius="12" placeholder="Drop a GCP field photo" data-resource-id="gcpFieldBlank" style="flex:1;width:100%;min-height:0"></image-slot>
+      <image-slot id="gcp-field-photo" shape="rounded" radius="12" placeholder="Drop a GCP field photo" data-resource-id="gcpFieldBlank" src="./assets/gnss/gcp-field-photo.png" style="flex:1;width:100%;min-height:0"></image-slot>
     </div>
     <div style="background:#F2EDE7;border-radius:20px;padding:40px;display:flex;flex-direction:column;min-width:0;overflow:hidden">
       <div style="font-weight:700;font-size:26px;color:#1A5532;margin-bottom:20px;white-space:nowrap">✓ Optimal</div>
-      <image-slot id="gcp-optimal-photo" shape="rounded" radius="10" placeholder="Drop an optimal layout photo" data-resource-id="gcpOptimalLayout" style="flex:1;width:100%;min-height:0"></image-slot>
+      <image-slot id="gcp-optimal-photo" shape="rounded" radius="10" placeholder="Drop an optimal layout photo" data-resource-id="gcpOptimalLayout" src="./assets/gnss/gcp-optimal-photo.png" style="flex:1;width:100%;min-height:0"></image-slot>
     </div>
     <div style="background:#F2EDE7;border-radius:20px;padding:40px;display:flex;flex-direction:column;min-width:0;overflow:hidden">
       <div style="font-weight:700;font-size:26px;color:#B42318;margin-bottom:20px;white-space:nowrap">✕ Vulnerable</div>
-      <image-slot id="gcp-vulnerable-photo" shape="rounded" radius="10" placeholder="Drop a vulnerable layout photo" data-resource-id="gcpVulnerableLayout" style="flex:1;width:100%;min-height:0"></image-slot>
+      <image-slot id="gcp-vulnerable-photo" shape="rounded" radius="10" placeholder="Drop a vulnerable layout photo" data-resource-id="gcpVulnerableLayout" src="./assets/gnss/gcp-vulnerable-photo.png" style="flex:1;width:100%;min-height:0"></image-slot>
     </div>
   </div>
 </section>
@@ -176,7 +176,7 @@ Checkpoints evaluate the solution." style="width:1920px;height:1080px;background
   <div class="eyebrow" style="color:#3E8EDE;margin-bottom:14px">Networked Corrections</div>
   <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:68px;color:#002E6D;margin:0 0 26px;letter-spacing:-0.01em">Deploying NTRIP</h2>
   <p style="font-family:'Source Serif 4',serif;font-size:30px;line-height:1.5;color:#3D2E25;margin:0 0 40px;max-width:1400px">In areas with cellular coverage, an NTRIP caster routes corrections globally over the internet. This allows a stationary base to feed corrections to a network rover or drone via a cellular IP connection.</p>
-  <div style="flex:1;width:100%;min-height:0"><image-slot id="ntrip-photo" shape="rounded" radius="16" placeholder="Drop an NTRIP setup photo" data-resource-id="ntripDiagram" fit="contain" style="width:100%;height:100%"></image-slot></div>
+  <div style="flex:1;width:100%;min-height:0"><image-slot id="ntrip-photo" shape="rounded" radius="16" placeholder="Drop an NTRIP setup photo" data-resource-id="ntripDiagram" src="./assets/gnss/ntrip-photo.png" fit="contain" style="width:100%;height:100%"></image-slot></div>
 </section>
 
 <!-- CONTENT: Offline / LoRa -->
@@ -185,14 +185,14 @@ Checkpoints evaluate the solution." style="width:1920px;height:1080px;background
   <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:64px;margin:0 0 26px;letter-spacing:-0.01em">Bypassing the internet in remote and offline areas</h2>
   <p style="font-family:'Source Serif 4',serif;font-size:29px;line-height:1.5;color:rgba(255,255,255,0.88);margin:0 0 60px;max-width:1450px">For dense forestry, remote sites, or internet-denied environments, hardware relies on Local NTRIP (Wi-Fi) or LoRa Radio (868/915 MHz), transmitting line-of-sight over distances up to 8 km.</p>
   
-  <div style="width:100%;max-width:1400px;aspect-ratio:2074/648;margin-top:40px"><image-slot id="offline-lora-photo" shape="rounded" radius="16" placeholder="Drop a remote-site / LoRa setup photo" data-resource-id="loraDiagram" fit="contain" style="width:100%;height:100%"></image-slot></div>
+  <div style="width:100%;max-width:1400px;aspect-ratio:2074/648;margin-top:40px"><image-slot id="offline-lora-photo" shape="rounded" radius="16" src="./assets/gnss/offline-lora-photo.png" placeholder="Drop a remote-site / LoRa setup photo" data-resource-id="loraDiagram" fit="contain" style="width:100%;height:100%"></image-slot></div>
 </section>
 
 <!-- CONTENT: Multipathing -->
 <section data-label="Signal Multipathing" data-speaker-notes="In urban canyons, tall structures block or bounce satellite signals, degrading fix from centimeters to 15+ centimeters of error." style="width:1920px;height:1080px;background:#F2EDE7;color:#3D2E25;display:flex;flex-direction:column;padding:88px 110px;box-sizing:border-box;font-family:'Montserrat',sans-serif">
   <div class="eyebrow" style="color:#B24E10;margin-bottom:14px">Signal Risk</div>
   <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:60px;color:#002E6D;margin:0 0 40px;letter-spacing:-0.01em;max-width:1500px">The threat of signal multipathing in RTK-denied environments</h2>
-  <div style="width:100%;max-width:1700px;aspect-ratio:1706/922;flex:1;min-height:0"><image-slot id="multipath-photo" shape="rounded" radius="20" placeholder="Drop an urban canyon or dense forest photo" data-resource-id="multipathDiagram" fit="contain" style="width:100%;height:100%"></image-slot></div>
+  <div style="width:100%;max-width:1700px;aspect-ratio:1706/922;flex:1;min-height:0"><image-slot id="multipath-photo" shape="rounded" radius="20" src="./assets/gnss/multipath-photo.png" placeholder="Drop an urban canyon or dense forest photo" data-resource-id="multipathDiagram" fit="contain" style="width:100%;height:100%"></image-slot></div>
 </section>
 
 <!-- BLUEPRINT / PROCESS -->
